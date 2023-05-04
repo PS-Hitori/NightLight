@@ -23,7 +23,9 @@ TagManager:
   - Home
   - Load
   - Options
-  - Transition
+  - Kill Plane
+  - SceneHandler
+  - CutsceneHandler
   layers:
   - Default
   - TransparentFX

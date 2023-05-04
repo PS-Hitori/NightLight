@@ -14,6 +14,10 @@ namespace LunarflyArts
             animator.SetBool("isIdle", isIdle);
         }
 
+        public void SetIsDead(bool isDead){
+            animator.SetBool("isDead", isDead);
+        }
+
         public void SetRunning(bool isRunning){
             animator.SetBool("isRunning", isRunning);
         }
@@ -28,6 +32,10 @@ namespace LunarflyArts
 
         public bool GetRunning(){
             return animator.GetBool("isRunning");
+        }
+
+        public bool GetDeath(){
+            return animator.GetBool("isDead");
         }
 
         public bool GetJumping(){

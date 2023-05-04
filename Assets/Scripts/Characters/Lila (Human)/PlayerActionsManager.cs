@@ -51,7 +51,7 @@ namespace LunarflyArts
         {
             PlayerMovement();
             PlayerJump();
-            PlayerGrapple();
+            //PlayerGrapple();
         }
 
         private void LateUpdate()

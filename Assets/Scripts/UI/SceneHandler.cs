@@ -7,17 +7,6 @@ namespace LunarflyArts
     public class SceneHandler : MonoBehaviour
     {
         private static SceneHandler _instance;
-        private GameObject transition;
-
-        private void Awake()
-        {
-            transition = GameObject.FindGameObjectWithTag("Transition");
-        }
-
-        private void Start(){
-            transition.SetActive(false);
-        }
-
         public static SceneHandler Instance
         {
             get
@@ -31,12 +20,11 @@ namespace LunarflyArts
                 return _instance;
             }
         }
-
         public void LoadScene(string sceneName)
         {
             StartCoroutine(LoadSceneAsyc(sceneName));
         }
-        private IEnumerator LoadSceneAsyc(string sceneName)
+        private static IEnumerator LoadSceneAsyc(string sceneName)
         {
             AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneName);
             asyncLoad.allowSceneActivation = false;
@@ -44,9 +32,8 @@ namespace LunarflyArts
             while (!asyncLoad.isDone)
             {
                 progress = Mathf.MoveTowards(progress, asyncLoad.progress, Time.deltaTime);
-                if(progress >= asyncLoad.progress)
+                if (progress >= asyncLoad.progress)
                 {
-                    transition.SetActive(true);
                     if (progress >= 0.9f)
                     {
                         asyncLoad.allowSceneActivation = true;

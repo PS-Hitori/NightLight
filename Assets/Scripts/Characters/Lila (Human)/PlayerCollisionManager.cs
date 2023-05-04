@@ -1,6 +1,7 @@
 using UnityEngine;
 using LunarflyArts;
 using System.Collections.Generic;
+using System.Collections;
 [RequireComponent(typeof(BoxCollider2D), typeof(Rigidbody2D))]
 public class PlayerCollisionManager : MonoBehaviour
 {
@@ -32,6 +33,12 @@ public class PlayerCollisionManager : MonoBehaviour
             }
 
             playerActionsManager.IsLightSigilDetected = true;
+        }
+
+        if(other.gameObject.CompareTag("Kill Plane")){
+            // Freeze the time
+            // There is still no proper death animation
+            Time.timeScale = 0f;
         }
     }
 

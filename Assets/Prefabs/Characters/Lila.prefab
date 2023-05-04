@@ -350,6 +350,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6892871743748344821}
   - component: {fileID: 6892871743748344820}
+  - component: {fileID: 2103721452}
+  - component: {fileID: 2103721453}
   m_Layer: 0
   m_Name: LilaVCam
   m_TagString: PlayerVCam
@@ -394,12 +396,12 @@ MonoBehaviour:
   m_LookAt: {fileID: 0}
   m_Follow: {fileID: 7079084311451312134}
   m_Lens:
-    FieldOfView: 40
-    OrthographicSize: 5
-    NearClipPlane: 0.1
+    FieldOfView: 30
+    OrthographicSize: 3.5
+    NearClipPlane: 5
     FarClipPlane: 5000
     Dutch: 0
-    ModeOverride: 0
+    ModeOverride: 2
     LensShift: {x: 0, y: 0}
     GateFit: 2
     m_SensorSize: {x: 1, y: 1}
@@ -411,6 +413,51 @@ MonoBehaviour:
         m_Calls: []
   m_LegacyBlendHint: 0
   m_ComponentOwner: {fileID: 6408456337138547308}
+--- !u!60 &2103721452
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6892871743748344822}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 1.4168987, y: 2.5660467}
+      - {x: -1.62222, y: 2.5685966}
+      - {x: -1.5647005, y: -2.128971}
+      - {x: 1.0352284, y: -2.1588}
+      - {x: 1.3761253, y: 0.20461363}
+--- !u!114 &2103721453
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6892871743748344822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f453f694addf4275988fac205bc91968, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_BoundingShape2D: {fileID: 2103721452}
+  m_Damping: 0.5
+  m_MaxWindowSize: 0
 --- !u!1 &6892871743996552655
 GameObject:
   m_ObjectHideFlags: 0
@@ -446,7 +493,7 @@ Transform:
   m_GameObject: {fileID: 6892871743996552655}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.45, y: 0.45, z: 1}
+  m_LocalScale: {x: 0.25, y: 0.25, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6892871743748344821}
@@ -550,6 +597,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b13f0ad30516fc49b347cf4d2b31a37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentInputType: 0
 --- !u!114 &6892871743996552631
 MonoBehaviour:
   m_ObjectHideFlags: 0
