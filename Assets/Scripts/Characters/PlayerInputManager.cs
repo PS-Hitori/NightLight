@@ -25,12 +25,6 @@ namespace LunarflyArts
             return inputActions.Movement.HorizontalMovement.ReadValue<float>();
         }
 
-        // Method to get the companion's vertical movement input
-        public float GetCompanionVerticalMovement()
-        {
-            return inputActions.ActionsCompanion.VerticalMovement.ReadValue<float>();
-        }
-
         // Method to get the jump input()
         public bool GetPlayerJumpInput()
         {

@@ -4,10 +4,7 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Companion
   - PlayerVCam
-  - CompanionVCam
-  - Sigil
   - Sprite
   - Ground
   - Switches
@@ -18,14 +15,15 @@ TagManager:
   - Playstation
   - Xbox
   - PC
-  - LilaUI
-  - AriaUI
   - Home
   - Load
   - Options
   - Kill Plane
   - SceneHandler
   - CutsceneHandler
+  - PlayerV2
+  - Warp
+  - TransitionHandler
   layers:
   - Default
   - TransparentFX

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: c2ab3a68e27ad524c8e45b7a27d798c8
+guid: a23df78ae8dfa1d4a91f87f28a4d46b2
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -33,7 +33,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -70,7 +70,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -117,13 +117,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Ground Forest_0
+      name: Lila Objects Interior_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1280
-        height: 1280
+        x: 19
+        y: 213
+        width: 785
+        height: 735
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -131,8 +131,71 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 945e1d4e8bcec3648b2bc9b69fc04f49
-      internalID: -47748956
+      spriteID: 0281b619e5c0c1e4da72abc6336669c3
+      internalID: -919143556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lila Objects Interior_1
+      rect:
+        serializedVersion: 2
+        x: 907
+        y: 604
+        width: 562
+        height: 390
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14cf7e799bb9da84d9e52bf0f2378362
+      internalID: -1072548726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lila Objects Interior_2
+      rect:
+        serializedVersion: 2
+        x: 959
+        y: 160
+        width: 441
+        height: 259
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b15d93cf8f5edb14389ba1f511af15e1
+      internalID: -1187281783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lila Objects Interior_3
+      rect:
+        serializedVersion: 2
+        x: 1568
+        y: 294
+        width: 197
+        height: 147
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f014a2a352cef824b8b8483939320892
+      internalID: -517371022
       vertices: []
       indices: 
       edges: []
@@ -148,7 +211,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Ground Forest_0: -47748956
+      Lila Objects Interior_0: -919143556
+      Lila Objects Interior_1: -1072548726
+      Lila Objects Interior_2: -1187281783
+      Lila Objects Interior_3: -517371022
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

@@ -5,6 +5,7 @@ namespace LunarflyArts
     public class CutsceneHandler : MonoBehaviour
     {
         private SceneHandler sceneHandler;
+        [SerializeField] private string sceneName;
 
         private void Awake()
         {
@@ -13,7 +14,7 @@ namespace LunarflyArts
 
         public void OnEnable()
         {
-            sceneHandler.LoadScene("NL_EXT_StarlightVillage");
+            sceneHandler.LoadScene(sceneName);
         }
     }
 }
