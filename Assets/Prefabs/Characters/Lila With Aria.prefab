@@ -477,7 +477,7 @@ GameObject:
   - component: {fileID: 4471970218759549001}
   - component: {fileID: 1108578209}
   m_Layer: 0
-  m_Name: Lila
+  m_Name: Lila With Aria
   m_TagString: Player
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0

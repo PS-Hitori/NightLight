@@ -6,13 +6,13 @@ namespace LunarflyArts
     {
         private Light2D lampLight;
         private PlayerInputManager inputManager;
-        private GameObject companion;
+        private GameObject player;
         private bool isLampLit;
 
         private void Awake(){
             lampLight = GetComponentInChildren<Light2D>();
             inputManager = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInputManager>();
-            companion = GameObject.FindGameObjectWithTag("Companion");
+            player = GameObject.FindGameObjectWithTag("Player");
         }
 
         public void LampLitState(){
@@ -32,14 +32,7 @@ namespace LunarflyArts
         }
 
         private void OnTriggerStay2D(Collider2D other){
-            if(inputManager.GetCompanionGlowInput() && other.gameObject.CompareTag("Companion")){
-                if(!isLampLit && companion.gameObject.GetComponent<CompanionActionManager>().GetCompanionLitState()){
-                    LampLitState();
-                }
-                else {
-                    Debug.Log("Lamp Already Lit");
-                }
-            }
+           
         }
     }
 }

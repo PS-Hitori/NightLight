@@ -23,32 +23,11 @@ public class PlayerCollisionManager : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Sigil"))
-        {
-            sigilsInRange.Add(other.gameObject);
-
-            if (sigilsInRange.Count > 0)
-            {
-                playerActionsManager.SetCanGrapple(true);
-            }
-
-            playerActionsManager.IsLightSigilDetected = true;
-        }
 
         if(other.gameObject.CompareTag("Kill Plane")){
             // Freeze the time
             // There is still no proper death animation
             Time.timeScale = 0f;
-        }
-    }
-
-    private void OnTriggerExit2D(Collider2D other)
-    {
-        sigilsInRange.Remove(other.gameObject);
-
-        if (sigilsInRange.Count == 0)
-        {
-            playerActionsManager.SetCanGrapple(false);
         }
     }
 }
