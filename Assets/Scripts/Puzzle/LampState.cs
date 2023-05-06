@@ -26,7 +26,7 @@ namespace LunarflyArts
         }
 
         private void OnCollisionEnter2D(Collision2D other){
-            if(other.gameObject.CompareTag("Player") || other.gameObject.CompareTag("Companion")){
+            if(other.gameObject.CompareTag("Player")){
                 Physics2D.IgnoreCollision(other.gameObject.GetComponent<Collider2D>(), GetComponent<Collider2D>());
             }
         }

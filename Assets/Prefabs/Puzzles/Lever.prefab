@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6123476455396067959}
   - component: {fileID: 6123476455396067958}
   - component: {fileID: 6123476455396067953}
+  - component: {fileID: 5225105519756069657}
   m_Layer: 0
   m_Name: Lever
   m_TagString: Switches
@@ -94,6 +95,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.727444, y: 3.610838}
   m_EdgeRadius: 0
+--- !u!114 &5225105519756069657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6123476455396067957}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69799ed29131fe5459ed1c9f42459b2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  puzzleTag: 
+  objectToActivate: {fileID: 0}
 --- !u!1 &6123476456226569053
 GameObject:
   m_ObjectHideFlags: 0
@@ -119,7 +134,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6123476456226569053}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.61, y: 0.5500001, z: 0}
+  m_LocalPosition: {x: -0.61, y: 1.243, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

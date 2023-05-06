@@ -25,14 +25,20 @@ TagManager:
   - Warp
   - TransitionHandler
   - Slime
+  - Light Orb
+  - Light
+  - Checkpoint
+  - Key Item
+  - DebugMaster
+  - Puzzle
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Sigil
+  - Dark
   - Water
   - UI
-  - 
+  - Front
   - 
   - 
   - 

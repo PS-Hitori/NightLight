@@ -13,7 +13,8 @@ namespace LunarflyArts
         {
             SceneManager.LoadScene(sceneName);
 
-            EditorUtility.DisplayDialog("Cutscene Skipped", "Why the fuck are you watching cutscenes, bro?", "OK");
+            // Had to comment this out because it was just an inside joke :p 
+            //EditorUtility.DisplayDialog("Cutscene Skipped", "Why the fuck are you watching cutscenes, bro?", "OK");
         }
     }
 }

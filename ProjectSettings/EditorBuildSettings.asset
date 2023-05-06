@@ -6,19 +6,22 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/NL_MainMenu.unity
+    path: Assets/Scenes/Beta/NL_MainMenu.unity
     guid: 6edd1d7824b7bf242a99c3ef42d668b5
   - enabled: 1
-    path: Assets/Scenes/Cutscenes/NL_Introduction.unity
+    path: Assets/Scenes/Beta/Cutscenes/NL_Introduction.unity
     guid: 3400bf016a4296c43aeae5e67fded387
   - enabled: 1
-    path: Assets/Scenes/Stages/NL_INT_LilaHouse.unity
-    guid: 11c387116ea50ab458f9b73b8b4450f3
+    path: Assets/Scenes/Beta/Stages/NL_EXT_DuskwoodForest.unity
+    guid: 64ab48e78cc045f48ae5923110ec559e
   - enabled: 1
-    path: Assets/Scenes/Stages/NL_EXT_StarlightVillage.unity
+    path: Assets/Scenes/Beta/Stages/NL_EXT_StarlightVillage.unity
     guid: 796f830b9397a924a8e6929e6a85c7c9
   - enabled: 1
-    path: Assets/Scenes/Stages/NL_EXT_DuskwoodForest.unity
-    guid: 64ab48e78cc045f48ae5923110ec559e
+    path: Assets/Scenes/Beta/Stages/NL_INT_LilaHouse.unity
+    guid: 11c387116ea50ab458f9b73b8b4450f3
+  - enabled: 1
+    path: Assets/Scenes/Beta/Debug/NL_DBG_PuzzleLab.unity
+    guid: 44d77544d26e2ff4da1a258c1de886e9
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 7933f369239c0564ca24ef38eb20afb7, type: 2}

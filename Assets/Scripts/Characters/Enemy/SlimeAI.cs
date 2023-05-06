@@ -32,5 +32,11 @@ namespace LunarflyArts
             Vector3 direction = new Vector3(movementDirection, 0f, 0f);
             transform.Translate(direction * movementSpeed * Time.deltaTime);
         }
+
+        private void OnTriggerEnter2D(Collider2D collider2D){
+            if(collider2D.gameObject.CompareTag("Light")){
+                Destroy(gameObject);
+            }
+        }
     }
 }

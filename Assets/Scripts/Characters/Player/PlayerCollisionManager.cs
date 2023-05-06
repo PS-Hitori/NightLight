@@ -20,6 +20,10 @@ public class PlayerCollisionManager : MonoBehaviour
         {
             playerActionsManager.SetIsJumping(false);
         }
+        if(other.gameObject.CompareTag("Key Item")){
+            Debug.Log("Key Item Collected");
+            Destroy(other.gameObject);
+        }
         if(other.gameObject.CompareTag("Slime")){
             // Freeze the time
             // There is still no proper death animation
@@ -33,6 +37,11 @@ public class PlayerCollisionManager : MonoBehaviour
             // Freeze the time
             // There is still no proper death animation
             Time.timeScale = 0f;
+        }
+
+        if(other.gameObject.CompareTag("Light Orb")){
+            Destroy(other.gameObject);
+            Debug.Log("Light Orb Collected");
         }
     }
 }

@@ -20,13 +20,7 @@ namespace LunarflyArts
             if(other.CompareTag("Player")){
                 sceneHandler.LoadScene(sceneName);
             }
-        }
-
-        private void OnTriggerExit2D(Collider2D other)
-        {
-            if(other.CompareTag("Player")  ){
-                // do nothing
-            }
+            
         }
     }
 }
