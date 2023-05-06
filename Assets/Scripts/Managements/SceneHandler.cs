@@ -7,12 +7,7 @@ namespace LunarflyArts
     public class SceneHandler : MonoBehaviour
     {
         private static SceneHandler _instance;
-        private TransitionHandler _transitionHandler;
-
-        private void Start()
-        {
-            _transitionHandler = TransitionHandler.Instance;
-        }
+        private static TransitionHandler _transitionHandler;
         public static SceneHandler Instance
         {
             get
@@ -38,7 +33,6 @@ namespace LunarflyArts
             float progress = 0f;
             while (!asyncLoad.isDone)
             {
-                TransitionHandler.Instance.OnTransitionEnable(true);
                 progress = Mathf.MoveTowards(progress, asyncLoad.progress, Time.deltaTime);
                 if (progress >= asyncLoad.progress)
                 {
@@ -47,7 +41,6 @@ namespace LunarflyArts
                         asyncLoad.allowSceneActivation = true;
                     }
                 }
-                Debug.Log("Loading progress: " + progress);
                 yield return null;
             }
         }

@@ -29,9 +29,8 @@ namespace LunarflyArts
             {
                 if (_instance == null)
                 {
-                    GameObject transitionHandlerObject = new GameObject("TransitionHandler");
-                    _instance = transitionHandlerObject.AddComponent<TransitionHandler>();
-                    DontDestroyOnLoad(transitionHandlerObject);
+                    _instance = FindObjectOfType<TransitionHandler>();
+                    DontDestroyOnLoad(_instance);
                 }
                 return _instance;
             }
@@ -40,15 +39,7 @@ namespace LunarflyArts
         private void Awake()
         {
             _animator = GetComponentInChildren<Animator>();
-            if (_animator == null)
-            {
-                Debug.LogError("Animator component not found in children!");
-            }
-        }
-        private void Start()
-        {
-
-            this.gameObject.SetActive(false);
+            this.gameObject.GetComponentInChildren<Canvas>().enabled = false;
         }
 
         public bool OnTransitionEnable(bool isTransitionEnabled)
@@ -56,12 +47,12 @@ namespace LunarflyArts
             this.isTransitionEnabled = isTransitionEnabled;
             if (this.isTransitionEnabled)
             {
-                this.gameObject.SetActive(true);
+                this.gameObject.GetComponentInChildren<Canvas>().enabled = true;
                 _animator.SetBool("IsTransitionEnabled", isTransitionEnabled);
             }
-            else
+            if(!this.isTransitionEnabled)
             {
-                this.gameObject.SetActive(false);
+                this.gameObject.GetComponentInChildren<Canvas>().enabled = true;
             }
 
             Debug.Log("Transition Enabled: " + this.isTransitionEnabled);

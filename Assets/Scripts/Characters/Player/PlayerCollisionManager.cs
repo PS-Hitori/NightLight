@@ -20,6 +20,11 @@ public class PlayerCollisionManager : MonoBehaviour
         {
             playerActionsManager.SetIsJumping(false);
         }
+        if(other.gameObject.CompareTag("Slime")){
+            // Freeze the time
+            // There is still no proper death animation
+            Time.timeScale = 0f;
+        }
     }
     private void OnTriggerEnter2D(Collider2D other)
     {

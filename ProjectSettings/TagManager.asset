@@ -24,6 +24,7 @@ TagManager:
   - PlayerV2
   - Warp
   - TransitionHandler
+  - Slime
   layers:
   - Default
   - TransparentFX

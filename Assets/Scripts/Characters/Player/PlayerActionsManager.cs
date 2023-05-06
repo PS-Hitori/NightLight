@@ -66,7 +66,9 @@ namespace LunarflyArts
             }
         }
 
-
+        private void InteractOnObjects(){
+            inputManager.GetInteractInput();
+        }
         public void SetIsJumping(bool jumping)
         {
             isJumping = jumping;

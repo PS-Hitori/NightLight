@@ -31,7 +31,7 @@ namespace LunarflyArts
             return inputActions.Movement.Jump.triggered;
         }
 
-        // Method to get the companion's glow input
+        // Method to get the companion's glow input (if the companion is present)
         public bool GetCompanionGlowInput()
         {
             return inputActions.ActionsCompanion.Glow.triggered;
@@ -43,7 +43,7 @@ namespace LunarflyArts
             return inputActions.Gameplay.Pause.triggered;
         }
 
-        // Method to get the interact input (globally used by both characters)
+        // Method to get the interact input
         public bool GetInteractInput()
         {
             return inputActions.Gameplay.Interact.triggered;

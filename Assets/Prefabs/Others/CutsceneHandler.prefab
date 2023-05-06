@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7961377950314370081}
   - component: {fileID: 7961377950314370082}
   m_Layer: 0
-  m_Name: CutsceneHander
+  m_Name: CutsceneHandler
   m_TagString: CutsceneHandler
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44,3 +44,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 122a368e94460fa4ca0c95782501bd6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sceneName: 
