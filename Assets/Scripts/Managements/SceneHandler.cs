@@ -7,7 +7,6 @@ namespace LunarflyArts
     public class SceneHandler : MonoBehaviour
     {
         private static SceneHandler _instance;
-        private static TransitionHandler _transitionHandler;
         public static SceneHandler Instance
         {
             get

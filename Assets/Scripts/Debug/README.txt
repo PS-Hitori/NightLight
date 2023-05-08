@@ -1,1 +1,0 @@
-This folder contains debug functionalities for the game. If this folder is included in the final game, make sure to set the IsGameInDebugMode flag to false in DebugMaster.cs.

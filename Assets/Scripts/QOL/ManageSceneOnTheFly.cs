@@ -7,34 +7,23 @@ namespace LunarflyArts
 {
     public class ManageSceneOnTheFly
     {
-        [MenuItem("Tools/Add-ons/Play First Scene %#&p")]
+        [MenuItem("Tools/Add-ons/Play First Scene")]
         public static void PlayFirstSceneAndReturn()
         {
-            // Save the current scene so that we can return to it later
-            Scene currentScene = SceneManager.GetActiveScene();
+            // Save the path of the current active scene so that we can return to it later
+            string currentScenePath = SceneManager.GetActiveScene().path;
 
-            // Save the scene to a temporary path if it has not been saved before
-            if (string.IsNullOrEmpty(currentScene.path))
-            {
-                EditorSceneManager.SaveScene(currentScene, "Assets/TempScene.unity");
-                currentScene = EditorSceneManager.GetActiveScene();
-            }
-            else
-            {
-                EditorSceneManager.SaveScene(currentScene);
-            }
-
-            // Load and play the first scene in the build index
+            // Load the first scene in the build index
             SceneAsset firstScene = AssetDatabase.LoadAssetAtPath<SceneAsset>(SceneUtility.GetScenePathByBuildIndex(0));
             EditorSceneManager.OpenScene(AssetDatabase.GetAssetPath(firstScene), OpenSceneMode.Single);
             EditorApplication.isPlaying = true;
 
-            // Return to the previously active scene when the game stops playing
+            // Restore the previously active scene when exiting play mode
             EditorApplication.playModeStateChanged += (PlayModeStateChange state) =>
             {
                 if (state == PlayModeStateChange.ExitingPlayMode)
                 {
-                    EditorSceneManager.OpenScene(currentScene.path, OpenSceneMode.Single);
+                    EditorSceneManager.OpenScene(currentScenePath, OpenSceneMode.Single);
                 }
             };
         }
