@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2580198323384250267}
   - component: {fileID: 7525382685535415842}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Right Leg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -258,7 +258,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2115775019711556550}
   - component: {fileID: 8474782641298564064}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Right Hand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -342,7 +342,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2452463194736871949}
   - component: {fileID: 1863423105282499049}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -434,7 +434,7 @@ GameObject:
   - component: {fileID: 6645529131325475828}
   - component: {fileID: 4471970218759549001}
   - component: {fileID: 1108578209}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Lila
   m_TagString: Player
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
@@ -542,7 +542,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b13f0ad30516fc49b347cf4d2b31a37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentInputType: 0
 --- !u!114 &6892871743996552631
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -609,7 +608,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8421465320396547404}
   - component: {fileID: 1141428241989000951}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Left Leg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -692,7 +691,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7079084311451312134}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -728,7 +727,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6576372460344267038}
   - component: {fileID: 6607403153987405516}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -814,7 +813,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3281938763262375311}
   - component: {fileID: 297052534646399880}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Left Hand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
