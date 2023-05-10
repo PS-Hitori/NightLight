@@ -31,6 +31,8 @@ TagManager:
   - Key Item
   - DebugMaster
   - Puzzle
+  - Hearts
+  - Companion
   layers:
   - Default
   - TransparentFX

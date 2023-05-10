@@ -8,33 +8,33 @@ namespace LunarflyArts
         private Vector3 offset;
 
         [SerializeField] private float followSpeed = 5f;
-        [SerializeField] private float flipThreshold = 0.25f;
 
-        private void Awake(){
+        private void Awake()
+        {
             player = GameObject.FindGameObjectWithTag("Player").transform;
             offset = transform.position - player.position;
             offset.y = transform.position.y - player.position.y; // adjust for the height of the companion
         }
 
-        private void Update(){
-            // Calculate the target position
+        private void Update()
+        {
             Vector3 targetPosition = player.position + offset;
 
-            // Smoothly move towards the target position
             transform.position = Vector3.Lerp(transform.position, targetPosition, followSpeed * Time.deltaTime);
 
-            // Flip the sprite if necessary
-            float distanceToPlayer = Mathf.Abs(transform.position.x - player.position.x);
-            if (distanceToPlayer > flipThreshold)
+            // Get the player's velocity and facing direction
+            Vector3 playerVelocity = player.GetComponent<Rigidbody2D>().velocity;
+            float playerFacingDirection = Mathf.Sign(player.localScale.x);
+
+            // Flip the companion if the player is moving left and the companion is to the right of the player
+            if (playerVelocity.x < 0 && transform.position.x > player.position.x && playerFacingDirection > 0)
             {
-                if (transform.position.x < player.position.x)
-                {
-                    transform.localRotation = Quaternion.Euler(0f, 0f, 0f);
-                }
-                else if (transform.position.x > player.position.x)
-                {
-                    transform.localRotation = Quaternion.Euler(0f, 180f, 0f);
-                }
+                transform.localRotation = Quaternion.Euler(0f, 180f, 0f);
+            }
+            // Flip the companion if the player is moving right and the companion is to the left of the player
+            else if (playerVelocity.x > 0 && transform.position.x < player.position.x && playerFacingDirection < 0)
+            {
+                transform.localRotation = Quaternion.Euler(0f, 0f, 0f);
             }
         }
     }

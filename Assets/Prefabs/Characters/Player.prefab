@@ -638,7 +638,7 @@ MonoBehaviour:
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 1
   m_AlphaBlendOnOverlap: 0
-  m_OverlapOperation: 1
+  m_OverlapOperation: 0
   m_NormalMapDistance: 3
   m_NormalMapQuality: 1
   m_UseNormalMap: 0
@@ -681,7 +681,7 @@ MonoBehaviour:
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
-  m_PointLightOuterRadius: 5
+  m_PointLightOuterRadius: 10
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
@@ -1318,6 +1318,7 @@ GameObject:
   - component: {fileID: 2841403562770754726}
   - component: {fileID: 8257149640941054759}
   - component: {fileID: 973234638048716796}
+  - component: {fileID: 4686348165237250866}
   m_Layer: 0
   m_Name: Lila
   m_TagString: Player
@@ -1393,7 +1394,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.044151306, y: 0.15453148}
+  m_Offset: {x: 0.044151306, y: 0.21316785}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -1404,7 +1405,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.7064285, y: 4.399688}
+  m_Size: {x: 1.7064285, y: 4.282415}
   m_EdgeRadius: 0
 --- !u!50 &3398022495021833616
 Rigidbody2D:
@@ -1439,7 +1440,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73595e93b9ef42e4ea45451059c3a896, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sigilsInRange: []
 --- !u!114 &8257149640941054759
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1473,6 +1473,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &4686348165237250866
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7366346450808214910}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a19c6e6f8d9e29b44a5567c198b74e53, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7758298834796023111
 GameObject:
   m_ObjectHideFlags: 0

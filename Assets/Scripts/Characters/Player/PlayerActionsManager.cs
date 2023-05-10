@@ -11,6 +11,7 @@ namespace LunarflyArts
         private PlayerInputManager inputManager;
         private PlayerCollisionManager collisionManager;
         private PlayerAnimatorHandler animatorHandler;
+        private GameObject companion;
         private bool isJumping;
 
         private void Start()
