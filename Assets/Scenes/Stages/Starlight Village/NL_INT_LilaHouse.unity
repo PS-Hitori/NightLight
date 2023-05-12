@@ -372,67 +372,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1001 &793956250
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1699218643254315778, guid: 93c6d84d7c068e7438b7db1961bcced6, type: 3}
-      propertyPath: dialogueSystem
-      value: 
-      objectReference: {fileID: 1775668491}
-    - target: {fileID: 1699218643254315788, guid: 93c6d84d7c068e7438b7db1961bcced6, type: 3}
-      propertyPath: m_RootOrder
-      value: 13
-      objectReference: {fileID: 0}
-    - target: {fileID: 1699218643254315788, guid: 93c6d84d7c068e7438b7db1961bcced6, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -5.09
-      objectReference: {fileID: 0}
-    - target: {fileID: 1699218643254315788, guid: 93c6d84d7c068e7438b7db1961bcced6, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -3.02
-      objectReference: {fileID: 0}
-    - target: {fileID: 1699218643254315788, guid: 93c6d84d7c068e7438b7db1961bcced6, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1699218643254315788, guid: 93c6d84d7c068e7438b7db1961bcced6, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1699218643254315788, guid: 93c6d84d7c068e7438b7db1961bcced6, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1699218643254315788, guid: 93c6d84d7c068e7438b7db1961bcced6, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1699218643254315788, guid: 93c6d84d7c068e7438b7db1961bcced6, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1699218643254315788, guid: 93c6d84d7c068e7438b7db1961bcced6, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1699218643254315788, guid: 93c6d84d7c068e7438b7db1961bcced6, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1699218643254315788, guid: 93c6d84d7c068e7438b7db1961bcced6, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1699218643254315789, guid: 93c6d84d7c068e7438b7db1961bcced6, type: 3}
-      propertyPath: m_Name
-      value: Dialogue Trigger
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 93c6d84d7c068e7438b7db1961bcced6, type: 3}
 --- !u!1 &817475006
 GameObject:
   m_ObjectHideFlags: 0
@@ -692,6 +631,50 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1089471660
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1089471662}
+  - component: {fileID: 1089471661}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1089471661
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1089471660}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85f31a68ed38b464ea27f93455f62ff5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1089471662
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1089471660}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1125498755
 GameObject:
   m_ObjectHideFlags: 0
@@ -1419,17 +1402,20 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8985926602221065708, guid: 21c765a6740716443b9213bab1000441, type: 3}
   m_PrefabInstance: {fileID: 2039645235}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1775668491 stripped
+--- !u!114 &1771127800
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8985926601925599779, guid: 21c765a6740716443b9213bab1000441, type: 3}
-  m_PrefabInstance: {fileID: 2039645235}
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1771127799}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 874b7cd35fcf43d43bf0f7fd94944644, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speakerNameText: {fileID: 479188469}
+  dialogueText: {fileID: 998108951}
 --- !u!1 &1845624183
 GameObject:
   m_ObjectHideFlags: 0
@@ -1509,7 +1495,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1845624183}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.954, y: -3.038, z: -10}
+  m_LocalPosition: {x: 0.37769604, y: -0.73776007, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1710,237 +1696,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8985926601925599779, guid: 21c765a6740716443b9213bab1000441, type: 3}
-      propertyPath: dialogueBox
-      value: 
-      objectReference: {fileID: 1771127799}
-    - target: {fileID: 8985926601925599779, guid: 21c765a6740716443b9213bab1000441, type: 3}
-      propertyPath: nameDisplay
-      value: 
-      objectReference: {fileID: 479188469}
-    - target: {fileID: 8985926601925599779, guid: 21c765a6740716443b9213bab1000441, type: 3}
-      propertyPath: textDisplay
-      value: 
-      objectReference: {fileID: 998108951}
-    - target: {fileID: 8985926601925599779, guid: 21c765a6740716443b9213bab1000441, type: 3}
-      propertyPath: typingSpeed
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8985926601925599779, guid: 21c765a6740716443b9213bab1000441, type: 3}
-      propertyPath: characterNames.Array.size
-      value: 23
-      objectReference: {fileID: 0}
-    - target: {fileID: 8985926601925599779, guid: 21c765a6740716443b9213bab1000441, type: 3}
-      propertyPath: characterDialogue.Array.size
-      value: 23
-      objectReference: {fileID: 0}
-    - target: {fileID: 8985926601925599779, guid: 21c765a6740716443b9213bab1000441, type: 3}
-      propertyPath: characterNames.Array.data[0]
-      value: Luminia
-      objectReference: {fileID: 0}
-    - target: {fileID: 8985926601925599779, guid: 21c765a6740716443b9213bab1000441, type: 3}
-      propertyPath: characterNames.Array.data[1]
-      value: Lila
-      objectReference: {fileID: 0}
-    - target: {fileID: 8985926601925599779, guid: 21c765a6740716443b9213bab1000441, type: 3}
-      propertyPath: characterNames.Array.data[2]
-      value: Luminia
-      objectReference: {fileID: 0}
-    - target: {fileID: 8985926601925599779, guid: 21c765a6740716443b9213bab1000441, type: 3}
-      propertyPath: characterNames.Array.data[3]
-      value: Lila
-      objectReference: {fileID: 0}
-    - target: {fileID: 8985926601925599779, guid: 21c765a6740716443b9213bab1000441, type: 3}
-      propertyPath: characterNames.Array.data[4]
-      value: Luminia
-      objectReference: {fileID: 0}
-    - target: {fileID: 8985926601925599779, guid: 21c765a6740716443b9213bab1000441, type: 3}
-      propertyPath: characterNames.Array.data[5]
-      value: Lila
-      objectReference: {fileID: 0}
-    - target: {fileID: 8985926601925599779, guid: 21c765a6740716443b9213bab1000441, type: 3}
-      propertyPath: characterNames.Array.data[6]
-      value: Luminia
-      objectReference: {fileID: 0}
-    - target: {fileID: 8985926601925599779, guid: 21c765a6740716443b9213bab1000441, type: 3}
-      propertyPath: characterNames.Array.data[7]
-      value: Lila
-      objectReference: {fileID: 0}
-    - target: {fileID: 8985926601925599779, guid: 21c765a6740716443b9213bab1000441, type: 3}
-      propertyPath: characterNames.Array.data[8]
-      value: Luminia
-      objectReference: {fileID: 0}
-    - target: {fileID: 8985926601925599779, guid: 21c765a6740716443b9213bab1000441, type: 3}
-      propertyPath: characterNames.Array.data[9]
-      value: Lila
-      objectReference: {fileID: 0}
-    - target: {fileID: 8985926601925599779, guid: 21c765a6740716443b9213bab1000441, type: 3}
-      propertyPath: characterNames.Array.data[10]
-      value: Luminia
-      objectReference: {fileID: 0}
-    - target: {fileID: 8985926601925599779, guid: 21c765a6740716443b9213bab1000441, type: 3}
-      propertyPath: characterNames.Array.data[11]
-      value: Lila
-      objectReference: {fileID: 0}
-    - target: {fileID: 8985926601925599779, guid: 21c765a6740716443b9213bab1000441, type: 3}
-      propertyPath: characterNames.Array.data[12]
-      value: Luminia
-      objectReference: {fileID: 0}
-    - target: {fileID: 8985926601925599779, guid: 21c765a6740716443b9213bab1000441, type: 3}
-      propertyPath: characterNames.Array.data[13]
-      value: Lila
-      objectReference: {fileID: 0}
-    - target: {fileID: 8985926601925599779, guid: 21c765a6740716443b9213bab1000441, type: 3}
-      propertyPath: characterNames.Array.data[14]
-      value: Luminia
-      objectReference: {fileID: 0}
-    - target: {fileID: 8985926601925599779, guid: 21c765a6740716443b9213bab1000441, type: 3}
-      propertyPath: characterNames.Array.data[15]
-      value: Lila
-      objectReference: {fileID: 0}
-    - target: {fileID: 8985926601925599779, guid: 21c765a6740716443b9213bab1000441, type: 3}
-      propertyPath: characterNames.Array.data[16]
-      value: Luminia
-      objectReference: {fileID: 0}
-    - target: {fileID: 8985926601925599779, guid: 21c765a6740716443b9213bab1000441, type: 3}
-      propertyPath: characterNames.Array.data[17]
-      value: Lila
-      objectReference: {fileID: 0}
-    - target: {fileID: 8985926601925599779, guid: 21c765a6740716443b9213bab1000441, type: 3}
-      propertyPath: characterNames.Array.data[18]
-      value: Luminia
-      objectReference: {fileID: 0}
-    - target: {fileID: 8985926601925599779, guid: 21c765a6740716443b9213bab1000441, type: 3}
-      propertyPath: characterNames.Array.data[19]
-      value: Lila
-      objectReference: {fileID: 0}
-    - target: {fileID: 8985926601925599779, guid: 21c765a6740716443b9213bab1000441, type: 3}
-      propertyPath: characterNames.Array.data[20]
-      value: Luminia
-      objectReference: {fileID: 0}
-    - target: {fileID: 8985926601925599779, guid: 21c765a6740716443b9213bab1000441, type: 3}
-      propertyPath: characterNames.Array.data[21]
-      value: Lila
-      objectReference: {fileID: 0}
-    - target: {fileID: 8985926601925599779, guid: 21c765a6740716443b9213bab1000441, type: 3}
-      propertyPath: characterNames.Array.data[22]
-      value: Lila
-      objectReference: {fileID: 0}
-    - target: {fileID: 8985926601925599779, guid: 21c765a6740716443b9213bab1000441, type: 3}
-      propertyPath: characterDialogue.Array.data[0]
-      value: Lila, can you hear me?
-      objectReference: {fileID: 0}
-    - target: {fileID: 8985926601925599779, guid: 21c765a6740716443b9213bab1000441, type: 3}
-      propertyPath: characterDialogue.Array.data[1]
-      value: Who's there? What's going on?
-      objectReference: {fileID: 0}
-    - target: {fileID: 8985926601925599779, guid: 21c765a6740716443b9213bab1000441, type: 3}
-      propertyPath: characterDialogue.Array.data[2]
-      value: It's me, Luminia, the Goddess of Light. I need your help, Lila. The
-        world is in great danger.
-      objectReference: {fileID: 0}
-    - target: {fileID: 8985926601925599779, guid: 21c765a6740716443b9213bab1000441, type: 3}
-      propertyPath: characterDialogue.Array.data[3]
-      value: The world? What do you mean? What danger?
-      objectReference: {fileID: 0}
-    - target: {fileID: 8985926601925599779, guid: 21c765a6740716443b9213bab1000441, type: 3}
-      propertyPath: characterDialogue.Array.data[4]
-      value: The darkness has spread all over, and my powers alone are no longer
-        enough to stop it. I need your help to save our world.
-      objectReference: {fileID: 0}
-    - target: {fileID: 8985926601925599779, guid: 21c765a6740716443b9213bab1000441, type: 3}
-      propertyPath: characterDialogue.Array.data[5]
-      value: Me? Why me?
-      objectReference: {fileID: 0}
-    - target: {fileID: 8985926601925599779, guid: 21c765a6740716443b9213bab1000441, type: 3}
-      propertyPath: characterDialogue.Array.data[6]
-      value: You have a kind heart, Lila, and that is what I need most. The darkness
-        can only be countered by the light. Will you help me, Lila?
-      objectReference: {fileID: 0}
-    - target: {fileID: 8985926601925599779, guid: 21c765a6740716443b9213bab1000441, type: 3}
-      propertyPath: characterDialogue.Array.data[7]
-      value: I...I don't know. What can I do?
-      objectReference: {fileID: 0}
-    - target: {fileID: 8985926601925599779, guid: 21c765a6740716443b9213bab1000441, type: 3}
-      propertyPath: characterDialogue.Array.data[8]
-      value: There is a fairy named Aria trapped in Duskwood Forest. She is unable
-        to break free. You must go to her and free her. Only then can we begin to
-        heal the world. After you set her free and I shall tell you the reason.
-      objectReference: {fileID: 0}
-    - target: {fileID: 8985926601925599779, guid: 21c765a6740716443b9213bab1000441, type: 3}
-      propertyPath: characterDialogue.Array.data[9]
-      value: Okay. I'll do it. I'll try my best.
-      objectReference: {fileID: 0}
-    - target: {fileID: 8985926601925599779, guid: 21c765a6740716443b9213bab1000441, type: 3}
-      propertyPath: characterDialogue.Array.data[10]
-      value: Thank you, Lila.
-      objectReference: {fileID: 0}
-    - target: {fileID: 8985926601925599779, guid: 21c765a6740716443b9213bab1000441, type: 3}
-      propertyPath: characterDialogue.Array.data[11]
-      value: One more thing, how do I get to Duskwood Forest?
-      objectReference: {fileID: 0}
-    - target: {fileID: 8985926601925599779, guid: 21c765a6740716443b9213bab1000441, type: 3}
-      propertyPath: characterDialogue.Array.data[12]
-      value: Is it just outside the village, you can easily find it.
-      objectReference: {fileID: 0}
-    - target: {fileID: 8985926601925599779, guid: 21c765a6740716443b9213bab1000441, type: 3}
-      propertyPath: characterDialogue.Array.data[13]
-      value: Okay...
-      objectReference: {fileID: 0}
-    - target: {fileID: 8985926601925599779, guid: 21c765a6740716443b9213bab1000441, type: 3}
-      propertyPath: characterDialogue.Array.data[14]
-      value: Lila, I have one more thing to tell you before you depart for Duskwood
-        Forest.
-      objectReference: {fileID: 0}
-    - target: {fileID: 8985926601925599779, guid: 21c765a6740716443b9213bab1000441, type: 3}
-      propertyPath: characterDialogue.Array.data[15]
-      value: What is it?
-      objectReference: {fileID: 0}
-    - target: {fileID: 8985926601925599779, guid: 21c765a6740716443b9213bab1000441, type: 3}
-      propertyPath: characterDialogue.Array.data[16]
-      value: The Duskwood Forest is too dark to walk through, you must find a lamp
-        that can help you navigate through the forest.
-      objectReference: {fileID: 0}
-    - target: {fileID: 8985926601925599779, guid: 21c765a6740716443b9213bab1000441, type: 3}
-      propertyPath: characterDialogue.Array.data[17]
-      value: A lamp? What does that have to do with anything?
-      objectReference: {fileID: 0}
-    - target: {fileID: 8985926601925599779, guid: 21c765a6740716443b9213bab1000441, type: 3}
-      propertyPath: characterDialogue.Array.data[18]
-      value: You see, the world has a little amount of light scattering through it
-        and also there are monster out there.
-      objectReference: {fileID: 0}
-    - target: {fileID: 8985926601925599779, guid: 21c765a6740716443b9213bab1000441, type: 3}
-      propertyPath: characterDialogue.Array.data[19]
-      value: Okay, I understand.
-      objectReference: {fileID: 0}
-    - target: {fileID: 8985926601925599779, guid: 21c765a6740716443b9213bab1000441, type: 3}
-      propertyPath: characterDialogue.Array.data[20]
-      value: Go on... I will guide you.
-      objectReference: {fileID: 0}
-    - target: {fileID: 8985926601925599779, guid: 21c765a6740716443b9213bab1000441, type: 3}
-      propertyPath: characterDialogue.Array.data[21]
-      value: '*sighs*'
-      objectReference: {fileID: 0}
-    - target: {fileID: 8985926601925599779, guid: 21c765a6740716443b9213bab1000441, type: 3}
-      propertyPath: characterDialogue.Array.data[22]
-      value: Do I have a choice?
-      objectReference: {fileID: 0}
     - target: {fileID: 8985926601925599789, guid: 21c765a6740716443b9213bab1000441, type: 3}
       propertyPath: m_Name
       value: Dialogue System
-      objectReference: {fileID: 0}
-    - target: {fileID: 8985926601925599789, guid: 21c765a6740716443b9213bab1000441, type: 3}
-      propertyPath: m_TagString
-      value: DialogueSystem
-      objectReference: {fileID: 0}
-    - target: {fileID: 8985926602171658140, guid: 21c765a6740716443b9213bab1000441, type: 3}
-      propertyPath: m_text
-      value: This is a test dialogue
-      objectReference: {fileID: 0}
-    - target: {fileID: 8985926602171658140, guid: 21c765a6740716443b9213bab1000441, type: 3}
-      propertyPath: m_VerticalAlignment
-      value: 256
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 21c765a6740716443b9213bab1000441, type: 3}
@@ -2028,7 +1786,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f453f694addf4275988fac205bc91968, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_BoundingShape2D: {fileID: 0}
+  m_BoundingShape2D: {fileID: 1700237374}
   m_Damping: 0.5
   m_MaxWindowSize: -1
 --- !u!1 &2113948149
@@ -2119,6 +1877,71 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1001 &4021545978411908298
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4021545977952997073, guid: 567ead22f7f2ee247b05f5ee63e191b3, type: 3}
+      propertyPath: m_Name
+      value: DialogueController
+      objectReference: {fileID: 0}
+    - target: {fileID: 4021545977952997078, guid: 567ead22f7f2ee247b05f5ee63e191b3, type: 3}
+      propertyPath: currentScene
+      value: 
+      objectReference: {fileID: 11400000, guid: c3b71efd5eae9084ea27b2c5f408a5a0, type: 2}
+    - target: {fileID: 4021545977952997078, guid: 567ead22f7f2ee247b05f5ee63e191b3, type: 3}
+      propertyPath: dialogueSystem
+      value: 
+      objectReference: {fileID: 1771127800}
+    - target: {fileID: 4021545977952997079, guid: 567ead22f7f2ee247b05f5ee63e191b3, type: 3}
+      propertyPath: m_RootOrder
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 4021545977952997079, guid: 567ead22f7f2ee247b05f5ee63e191b3, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4021545977952997079, guid: 567ead22f7f2ee247b05f5ee63e191b3, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4021545977952997079, guid: 567ead22f7f2ee247b05f5ee63e191b3, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4021545977952997079, guid: 567ead22f7f2ee247b05f5ee63e191b3, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4021545977952997079, guid: 567ead22f7f2ee247b05f5ee63e191b3, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4021545977952997079, guid: 567ead22f7f2ee247b05f5ee63e191b3, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4021545977952997079, guid: 567ead22f7f2ee247b05f5ee63e191b3, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4021545977952997079, guid: 567ead22f7f2ee247b05f5ee63e191b3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4021545977952997079, guid: 567ead22f7f2ee247b05f5ee63e191b3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4021545977952997079, guid: 567ead22f7f2ee247b05f5ee63e191b3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 567ead22f7f2ee247b05f5ee63e191b3, type: 3}
 --- !u!1001 &6047152254697647094
 PrefabInstance:
   m_ObjectHideFlags: 0

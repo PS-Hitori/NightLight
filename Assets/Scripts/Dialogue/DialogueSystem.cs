@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
@@ -9,118 +8,84 @@ namespace LunarflyArts
     // Similar to Genshin Impact's dialogue system
     public class DialogueSystem : MonoBehaviour
     {
-        [SerializeField] private TextMeshProUGUI nameDisplay;
-        [SerializeField] private TextMeshProUGUI textDisplay;
-        [SerializeField] private GameObject dialogueBox;
-        [SerializeField] private string[] characterNames;
-        [TextArea(5, 10)]
-        [SerializeField] private string[] characterDialogue;
-        private int index;
-        private bool isDialogueSystemTriggered;
-        private bool isTyping;
-        [SerializeField] private float typingSpeed;
+        public TextMeshProUGUI speakerNameText;
+        public TextMeshProUGUI dialogueText;
 
-        private PlayerInputManager playerInputManager;
-        private GameObject gameUI;
-        private GameObject dialogueTrigger;
+        private int dialogueIndex = 0;
+        private StoryScene currentScene;
+        private DialogueState dialogueState = DialogueState.Finished;
 
-        private void Start()
+        private enum DialogueState { Speaking, Finished }
+
+        // Added: reference to the game manager to freeze time
+        private GameManager gameManager;
+
+        private void Awake()
         {
-            dialogueBox.SetActive(false);
-            index = 0;
-            playerInputManager = GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<PlayerInputManager>();
-            gameUI = GameObject.FindGameObjectWithTag("UI");
-            dialogueTrigger = GameObject.FindGameObjectWithTag("DialogueTrigger");
-            isDialogueSystemTriggered = false;
+            // Added: get a reference to the game manager
+            gameManager = FindObjectOfType<GameManager>();
         }
 
-        private void Update()
+        // Added: method to trigger the dialogue and start playing the first line
+        public void TriggerDialogue(StoryScene storyScene)
         {
-            if (playerInputManager.GetSubmit() || playerInputManager.GetClick())
+            currentScene = storyScene;
+            dialogueIndex = 0;
+            speakerNameText.text = currentScene.dialogues[dialogueIndex].speaker.speakerName;
+            StartCoroutine(DialogueCoroutine(currentScene.dialogues[dialogueIndex].dialogue));
+        }
+
+        // Modified: method to play the next dialogue line or close the dialog box if no more lines
+        public void PlayNextDialogue()
+        {
+            if (dialogueIndex < currentScene.dialogues.Count - 1)
             {
-                if (!isTyping)
+                dialogueIndex++;
+                speakerNameText.text = currentScene.dialogues[dialogueIndex].speaker.speakerName;
+                StartCoroutine(DialogueCoroutine(currentScene.dialogues[dialogueIndex].dialogue));
+            }
+            else
+            {
+                dialogueIndex = 0;
+                currentScene = null;
+                speakerNameText.text = "";
+                dialogueText.text = "";
+                gameObject.SetActive(false); // Added: hide the dialog box
+                gameManager.UnfreezeTime(); // Added: unfreeze time
+            }
+        }
+
+        public bool IsDialogueCompleted()
+        {
+            return dialogueState == DialogueState.Finished;
+        }
+
+        public bool IsDialogueInLastSentence()
+        {
+            return dialogueIndex == currentScene.dialogues.Count - 1;
+        }
+
+        private IEnumerator DialogueCoroutine(string dialogue)
+        {
+            dialogueText.text = "";
+            dialogueState = DialogueState.Speaking;
+            int dialogueCharacterIndex = 0;
+
+            // Added: freeze time while the dialog box is active
+            gameManager.FreezeTime();
+
+            while (dialogueState != DialogueState.Finished)
+            {
+                dialogueText.text += dialogue[dialogueCharacterIndex];
+                yield return new WaitForSeconds(0.05f);
+                if (++dialogueCharacterIndex == dialogue.Length)
                 {
-                    AdvanceDialogue();
+                    dialogueState = DialogueState.Finished;
                 }
             }
-        }
-        private IEnumerator TypeSentence(string sentence)
-        {
-            isTyping = true;
-            textDisplay.text = "";
-            for (int i = 0; i < sentence.Length; i++)
-            {
-                textDisplay.text += sentence[i];
-                if (playerInputManager.GetSubmit())
-                {
-                    // Player has pressed submit, stop typing and display the full sentence
-                    StopCoroutine("TypeSentence");
-                    textDisplay.text = sentence;
-                    isTyping = false;
-                    yield break;
-                }
-                yield return new WaitForSeconds(typingSpeed);
-            }
-            isTyping = false;
-        }
 
-        public void SetDialogueSystemTriggered(bool isTriggered)
-        {
-            if (!isDialogueSystemTriggered)
-            {
-                isDialogueSystemTriggered = true;
-                StartDialogue(characterDialogue, characterNames);
-            }
-        }
-
-        private IEnumerator TypeDialogue(string dialogue)
-        {
-            textDisplay.text = "";
-            foreach (char letter in dialogue.ToCharArray())
-            {
-                textDisplay.text += letter;
-                yield
-                return new WaitForSeconds(0.25f);
-            }
-        }
-
-        private IEnumerator DisplayDialogue(string name, string sentence)
-        {
-            nameDisplay.text = name;
-            yield
-            return StartCoroutine(TypeSentence(sentence));
-        }
-
-        private void AdvanceDialogue()
-        {
-
-            if (index >= characterDialogue.Length)
-            {
-                EndDialogue();
-                return;
-            }
-
-            StartCoroutine(DisplayDialogue(characterNames[index], characterDialogue[index]));
-            index++;
-        }
-
-        public void StartDialogue(string[] newDialogue, string[] newNpcNames)
-        {
-            characterDialogue = newDialogue;
-            characterNames = newNpcNames;
-            index = 0;
-            dialogueBox.SetActive(true);
-            nameDisplay.text = characterNames[index];
-            textDisplay.text = characterDialogue[index];
-            gameUI.SetActive(false);
-            Time.timeScale = 0f;
-        }
-        public void EndDialogue()
-        {
-            dialogueBox.SetActive(false);
-            gameUI.SetActive(true);
-            Time.timeScale = 1f;
-            Destroy(dialogueTrigger);
+            // Added: unfreeze time when the dialogue line is finished
+            gameManager.UnfreezeTime();
         }
     }
 }

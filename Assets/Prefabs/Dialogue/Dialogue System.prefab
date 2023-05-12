@@ -11,11 +11,10 @@ GameObject:
   - component: {fileID: 8985926601925599777}
   - component: {fileID: 8985926601925599776}
   - component: {fileID: 8985926601925599791}
-  - component: {fileID: 8985926601925599779}
   - component: {fileID: 8985926601925599790}
   m_Layer: 5
   m_Name: Dialogue System
-  m_TagString: Untagged
+  m_TagString: DialogueSystem
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -85,24 +84,6 @@ MonoBehaviour:
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
   m_PresetInfoIsWorld: 0
---- !u!114 &8985926601925599779
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8985926601925599789}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 874b7cd35fcf43d43bf0f7fd94944644, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nameDisplay: {fileID: 0}
-  textDisplay: {fileID: 0}
-  dialogueBox: {fileID: 0}
-  characterNames: []
-  characterDialogue: []
-  typingSpeed: 0
 --- !u!114 &8985926601925599790
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -186,7 +167,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: New Text
+  m_text: This is a test dialogue
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0eb4b238a04953248be6c22f81739bda, type: 2}
   m_sharedMaterial: {fileID: -3006527926659528951, guid: 0eb4b238a04953248be6c22f81739bda, type: 2}
