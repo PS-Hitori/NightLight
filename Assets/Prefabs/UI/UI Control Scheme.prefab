@@ -36,7 +36,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -141.3, y: 104.7}
+  m_AnchoredPosition: {x: -141.2998, y: 104.69995}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 1, y: 0}
 --- !u!222 &7270120995666015811
@@ -67,7 +67,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -919087009, guid: 045e9e55ca490424f852c78eb0e9ce3b, type: 3}
+  m_Sprite: {fileID: -1278539235, guid: bedad085b4f727c408fae436e92ea634, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -130,10 +130,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2841032914209374704}
-  - component: {fileID: 827435088425173635}
   m_Layer: 5
   m_Name: UI Control Scheme
-  m_TagString: Untagged
+  m_TagString: Transition
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -155,18 +154,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &827435088425173635
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2841032914209374707}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b1846749dad8b643a25b3a58fa7fd8e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2841032914359888942
 GameObject:
   m_ObjectHideFlags: 0
@@ -245,7 +232,7 @@ MonoBehaviour:
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 1920, y: 1080}
-  m_ScreenMatchMode: 0
+  m_ScreenMatchMode: 1
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
@@ -268,7 +255,7 @@ MonoBehaviour:
   m_BlockingObjects: 0
   m_BlockingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 32
 --- !u!1 &2950792671923103361
 GameObject:
   m_ObjectHideFlags: 0
@@ -305,7 +292,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -140.3, y: 290.4}
+  m_AnchoredPosition: {x: -140.2998, y: 290.3999}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 1, y: 0}
 --- !u!222 &8592560578151280986
@@ -336,7 +323,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -1623024304, guid: 045e9e55ca490424f852c78eb0e9ce3b, type: 3}
+  m_Sprite: {fileID: -1885909713, guid: bedad085b4f727c408fae436e92ea634, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -403,7 +390,7 @@ GameObject:
   - component: {fileID: 3301158933415046906}
   m_Layer: 5
   m_Name: Hearts (1)
-  m_TagString: Untagged
+  m_TagString: Hearts
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -479,7 +466,7 @@ GameObject:
   - component: {fileID: 2441497874182966788}
   m_Layer: 5
   m_Name: Hearts (2)
-  m_TagString: Untagged
+  m_TagString: Hearts
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -656,7 +643,7 @@ GameObject:
   - component: {fileID: 6334739772909132062}
   m_Layer: 5
   m_Name: Hearts
-  m_TagString: Untagged
+  m_TagString: Hearts
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -755,7 +742,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 63.600098, y: -98.900024}
+  m_AnchoredPosition: {x: 63.600098, y: -98.8999}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &4674355925403963479
@@ -825,7 +812,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 796064270, guid: 045e9e55ca490424f852c78eb0e9ce3b, type: 3}
+  m_Sprite: {fileID: -1006473609, guid: bedad085b4f727c408fae436e92ea634, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -968,7 +955,7 @@ GameObject:
   - component: {fileID: 1447010117601337570}
   - component: {fileID: 215072141351411094}
   m_Layer: 5
-  m_Name: Playstation (1)
+  m_Name: PC
   m_TagString: Playstation
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

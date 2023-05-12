@@ -39,6 +39,21 @@ namespace LunarflyArts
             return inputActions.Gameplay.Interact.triggered;
         }
 
+        public bool GetSubmit()
+        {
+            return inputActions.Menu.Submit.triggered;
+        }
+
+        public bool GetCancel()
+        {
+            return inputActions.Menu.Cancel.triggered;
+        }
+
+        public bool GetClick()
+        {
+            return inputActions.Menu.Click.triggered;
+        }
+
         private void OnDisable(){
             inputActions.Disable();
         }

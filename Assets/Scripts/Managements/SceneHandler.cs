@@ -20,6 +20,7 @@ namespace LunarflyArts
                 return _instance;
             }
         }
+
         public void LoadScene(string sceneName)
         {
             StartCoroutine(LoadSceneAsyc(sceneName));

@@ -4,24 +4,13 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - PlayerVCam
-  - Sprite
   - Ground
   - Switches
-  - Boss Fight Flag
-  - Story Flag
-  - Boss
-  - Dark Orb
   - Playstation
   - Xbox
   - PC
-  - Home
-  - Load
-  - Options
   - Kill Plane
   - SceneHandler
-  - CutsceneHandler
-  - PlayerV2
   - Warp
   - TransitionHandler
   - Slime
@@ -29,10 +18,22 @@ TagManager:
   - Light
   - Checkpoint
   - Key Item
-  - DebugMaster
   - Puzzle
   - Hearts
   - Companion
+  - Menu
+  - Options
+  - Load
+  - Options/Video
+  - Options/Audio
+  - Options/Controls
+  - Transition
+  - UI
+  - Glow
+  - Interact
+  - Backdrop
+  - DialogueTrigger
+  - DialogueSystem
   layers:
   - Default
   - TransparentFX

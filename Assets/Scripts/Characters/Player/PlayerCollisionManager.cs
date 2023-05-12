@@ -1,6 +1,6 @@
 using UnityEngine;
 using LunarflyArts;
-[RequireComponent(typeof(BoxCollider2D), typeof(Rigidbody2D))]
+[RequireComponent(typeof(CapsuleCollider2D), typeof(Rigidbody2D))]
 public class PlayerCollisionManager : MonoBehaviour
 {
     private PlayerAnimatorHandler playerAnimatorHandler;
@@ -41,9 +41,9 @@ public class PlayerCollisionManager : MonoBehaviour
             Destroy(other.gameObject);
             Debug.Log("Light Orb Collected");
         }
-        if(other.gameObject.CompareTag("Slime")){
+        if(other.gameObject.CompareTag("Key Item")){
+            Debug.Log("Key Item Collected");
             Destroy(other.gameObject);
-            Debug.Log("Slime Killed");
         }
     }
 }

@@ -28,7 +28,7 @@ namespace LunarflyArts
 
         private void Awake()
         {
-            homeCanvas = GameObject.FindGameObjectWithTag("Home");
+            homeCanvas = GameObject.FindGameObjectWithTag("Menu");
             loadGameCanvas = GameObject.FindGameObjectWithTag("Load");
             optionCanvas = GameObject.FindGameObjectWithTag("Options");
         }
