@@ -36,6 +36,7 @@ TagManager:
   - DialogueSystem
   - GameManager
   - Door
+  - Game Over
   layers:
   - Default
   - TransparentFX

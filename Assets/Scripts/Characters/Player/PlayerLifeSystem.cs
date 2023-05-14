@@ -8,14 +8,19 @@ namespace LunarflyArts
         private int playerMaxHeart = 3;
         private bool canLoseLife = true;
         private float loseLifeCooldown = 1.0f;
+        private GameObject gameOverScreen;
 
         private void Awake()
         {
             Canvas uiCanvas = FindObjectOfType<Canvas>();
             playerHearts = new GameObject[playerMaxHeart];
             playerHearts = GameObject.FindGameObjectsWithTag("Hearts");
+            gameOverScreen = GameObject.Find("Game Over");
         }
 
+        private void Start(){
+            gameOverScreen.SetActive(false);
+        }
         public void LoseLife()
         {
             if (!canLoseLife) return;
@@ -31,8 +36,7 @@ namespace LunarflyArts
 
             if (playerHearts[0].activeSelf == false)
             {
-                // Freeze the time
-                // There is still no proper death animation
+                gameOverScreen.SetActive(true);
                 Time.timeScale = 0f;
             }
 

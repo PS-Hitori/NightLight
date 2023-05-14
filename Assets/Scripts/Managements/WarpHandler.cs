@@ -10,11 +10,10 @@ namespace LunarflyArts
         private void Start()
         {
             interactButton = GameObject.FindGameObjectWithTag("Interact");
-            interactButton.SetActive(false);
         }
-        
         private void OnTriggerEnter2D(Collider2D other)
         {
+            interactButton.SetActive(false);
             if (other.gameObject.CompareTag("Player"))
             {
                 WarpToScene(sceneName);
