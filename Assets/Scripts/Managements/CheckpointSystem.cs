@@ -13,7 +13,6 @@ namespace LunarflyArts
                 if (other.CompareTag("Player"))
                 {
                     lastCheckpoint = other.transform.position;
-                    Debug.Log("Checkpoint Reached: " + lastCheckpoint);
                 }
             }
 
