@@ -33,9 +33,14 @@ namespace LunarflyArts
             transform.Translate(direction * movementSpeed * Time.deltaTime);
         }
 
-        private void OnTriggerEnter2D(Collider2D collider2D){
-            if(collider2D.gameObject.CompareTag("Light")){
-                Destroy(gameObject);
+        private void OnTriggerEnter2D(Collider2D collider2D)
+        {
+            if (collider2D.gameObject.CompareTag("Player"))
+            {
+                if (collider2D.transform.position.y > transform.position.y + 0.5f)
+                {
+                    Destroy(gameObject);
+                }
             }
         }
     }
