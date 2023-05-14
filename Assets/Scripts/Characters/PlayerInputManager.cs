@@ -54,7 +54,8 @@ namespace LunarflyArts
             return inputActions.Menu.Click.triggered;
         }
 
-        private void OnDisable(){
+        private void OnDisable()
+        {
             inputActions.Disable();
         }
     }

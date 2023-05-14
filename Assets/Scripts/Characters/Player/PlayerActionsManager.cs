@@ -22,7 +22,7 @@ namespace LunarflyArts
             collisionManager = GetComponent<PlayerCollisionManager>();
         }
 
-        private void FixedUpdate()
+        private void LateUpdate()
         {
             PlayerMovement();
             PlayerJump();
