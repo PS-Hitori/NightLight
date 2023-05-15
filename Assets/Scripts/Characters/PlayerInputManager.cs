@@ -23,12 +23,6 @@ namespace LunarflyArts
         {
             return inputActions.Movement.Jump.triggered;
         }
-
-        public bool GetCompanionGlowInput()
-        {
-            return inputActions.ActionsCompanion.Glow.triggered;
-        }
-
         public bool GetGameplayPauseInput()
         {
             return inputActions.Gameplay.Pause.triggered;

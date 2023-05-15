@@ -7,6 +7,11 @@ namespace LunarflyArts
         private GameObject homeCanvas;
         private GameObject loadGameCanvas;
         private GameObject optionCanvas;
+
+        private GameObject options_game;
+        private GameObject options_audio;
+        private GameObject options_video;
+        private GameObject options_controls;
         private static CanvasHandler _instance;
 
         private PlayerInputActions _inputActions;
@@ -31,6 +36,11 @@ namespace LunarflyArts
             homeCanvas = GameObject.FindGameObjectWithTag("Menu");
             loadGameCanvas = GameObject.FindGameObjectWithTag("Load");
             optionCanvas = GameObject.FindGameObjectWithTag("Options");
+
+            options_game = GameObject.FindGameObjectWithTag("Options/Game");
+            options_audio = GameObject.FindGameObjectWithTag("Options/Audio");
+            options_video = GameObject.FindGameObjectWithTag("Options/Video");
+            options_controls = GameObject.FindGameObjectWithTag("Options/Controls");
         }
 
         private void Start()
@@ -43,6 +53,11 @@ namespace LunarflyArts
             homeCanvas.SetActive(true);
             loadGameCanvas.SetActive(false);
             optionCanvas.SetActive(false);
+
+            options_game.SetActive(false);
+            options_audio.SetActive(false);
+            options_video.SetActive(false);
+            options_controls.SetActive(false);
         }
 
         public void ShowLoadGameCanvas()
@@ -50,6 +65,11 @@ namespace LunarflyArts
             homeCanvas.SetActive(false);
             loadGameCanvas.SetActive(true);
             optionCanvas.SetActive(false);
+
+            options_game.SetActive(false);
+            options_audio.SetActive(false);
+            options_video.SetActive(false);
+            options_controls.SetActive(false);
         }
 
         public void ShowOptionCanvas()
@@ -57,8 +77,72 @@ namespace LunarflyArts
             homeCanvas.SetActive(false);
             loadGameCanvas.SetActive(false);
             optionCanvas.SetActive(true);
+
+            options_game.SetActive(false);
+            options_audio.SetActive(false);
+            options_video.SetActive(false);
+            options_controls.SetActive(false);
         }
 
+        public void ShowOptionsGame()
+        {
+            homeCanvas.SetActive(false);
+            loadGameCanvas.SetActive(false);
+            optionCanvas.SetActive(false);
+
+            options_game.SetActive(true);
+            options_audio.SetActive(false);
+            options_video.SetActive(false);
+            options_controls.SetActive(false);
+        }
+
+        public void ShowOptionsAudio()
+        {
+            homeCanvas.SetActive(false);
+            loadGameCanvas.SetActive(false);
+            optionCanvas.SetActive(false);
+
+            options_game.SetActive(false);
+            options_audio.SetActive(true);
+            options_video.SetActive(false);
+            options_controls.SetActive(false);
+        }
+
+        public void ShowOptionsVideo()
+        {
+            homeCanvas.SetActive(false);
+            loadGameCanvas.SetActive(false);
+            optionCanvas.SetActive(false);
+
+            options_game.SetActive(false);
+            options_audio.SetActive(false);
+            options_video.SetActive(true);
+            options_controls.SetActive(false);
+        }
+
+        public void ShowOptionsControls()
+        {
+            homeCanvas.SetActive(false);
+            loadGameCanvas.SetActive(false);
+            optionCanvas.SetActive(false);
+
+            options_game.SetActive(false);
+            options_audio.SetActive(false);
+            options_video.SetActive(false);
+            options_controls.SetActive(true);
+        }
+
+        public void QuitGame()
+        {
+            if (UnityEngine.Application.isEditor)
+            {
+                UnityEditor.EditorApplication.isPlaying = false;
+            }
+            else
+            {
+                UnityEngine.Application.Quit();
+            }
+        }
         private void OnEnable()
         {
             if (_inputActions == null)

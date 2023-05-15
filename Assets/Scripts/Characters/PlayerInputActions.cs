@@ -171,67 +171,6 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             ]
         },
         {
-            ""name"": ""Actions (Companion)"",
-            ""id"": ""ae33a87c-5d3c-4bbb-921b-5504783b2474"",
-            ""actions"": [
-                {
-                    ""name"": ""Glow"",
-                    ""type"": ""Button"",
-                    ""id"": ""74b47968-f2b6-4804-9704-b6a1649eec87"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                }
-            ],
-            ""bindings"": [
-                {
-                    ""name"": """",
-                    ""id"": ""e268e7fd-675e-41c0-bd2d-55a615335b6d"",
-                    ""path"": ""<Keyboard>/x"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""PC"",
-                    ""action"": ""Glow"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""One Modifier"",
-                    ""id"": ""2f8bb495-0cee-434f-bcaa-5a6916221e9a"",
-                    ""path"": ""OneModifier"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Glow"",
-                    ""isComposite"": true,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""modifier"",
-                    ""id"": ""1286008e-8e1c-46e4-9dd0-913e52a6045a"",
-                    ""path"": ""<Gamepad>/leftTrigger"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Console"",
-                    ""action"": ""Glow"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""binding"",
-                    ""id"": ""b3a76665-6313-413a-bf2e-5146db338426"",
-                    ""path"": ""<Gamepad>/rightTrigger"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Console"",
-                    ""action"": ""Glow"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                }
-            ]
-        },
-        {
             ""name"": ""Gameplay"",
             ""id"": ""5a5932e0-9865-4054-997e-6fa52d9c537f"",
             ""actions"": [
@@ -472,9 +411,6 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         m_Movement = asset.FindActionMap("Movement", throwIfNotFound: true);
         m_Movement_HorizontalMovement = m_Movement.FindAction("Horizontal Movement", throwIfNotFound: true);
         m_Movement_Jump = m_Movement.FindAction("Jump", throwIfNotFound: true);
-        // Actions (Companion)
-        m_ActionsCompanion = asset.FindActionMap("Actions (Companion)", throwIfNotFound: true);
-        m_ActionsCompanion_Glow = m_ActionsCompanion.FindAction("Glow", throwIfNotFound: true);
         // Gameplay
         m_Gameplay = asset.FindActionMap("Gameplay", throwIfNotFound: true);
         m_Gameplay_Pause = m_Gameplay.FindAction("Pause", throwIfNotFound: true);
@@ -597,52 +533,6 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         }
     }
     public MovementActions @Movement => new MovementActions(this);
-
-    // Actions (Companion)
-    private readonly InputActionMap m_ActionsCompanion;
-    private List<IActionsCompanionActions> m_ActionsCompanionActionsCallbackInterfaces = new List<IActionsCompanionActions>();
-    private readonly InputAction m_ActionsCompanion_Glow;
-    public struct ActionsCompanionActions
-    {
-        private @PlayerInputActions m_Wrapper;
-        public ActionsCompanionActions(@PlayerInputActions wrapper) { m_Wrapper = wrapper; }
-        public InputAction @Glow => m_Wrapper.m_ActionsCompanion_Glow;
-        public InputActionMap Get() { return m_Wrapper.m_ActionsCompanion; }
-        public void Enable() { Get().Enable(); }
-        public void Disable() { Get().Disable(); }
-        public bool enabled => Get().enabled;
-        public static implicit operator InputActionMap(ActionsCompanionActions set) { return set.Get(); }
-        public void AddCallbacks(IActionsCompanionActions instance)
-        {
-            if (instance == null || m_Wrapper.m_ActionsCompanionActionsCallbackInterfaces.Contains(instance)) return;
-            m_Wrapper.m_ActionsCompanionActionsCallbackInterfaces.Add(instance);
-            @Glow.started += instance.OnGlow;
-            @Glow.performed += instance.OnGlow;
-            @Glow.canceled += instance.OnGlow;
-        }
-
-        private void UnregisterCallbacks(IActionsCompanionActions instance)
-        {
-            @Glow.started -= instance.OnGlow;
-            @Glow.performed -= instance.OnGlow;
-            @Glow.canceled -= instance.OnGlow;
-        }
-
-        public void RemoveCallbacks(IActionsCompanionActions instance)
-        {
-            if (m_Wrapper.m_ActionsCompanionActionsCallbackInterfaces.Remove(instance))
-                UnregisterCallbacks(instance);
-        }
-
-        public void SetCallbacks(IActionsCompanionActions instance)
-        {
-            foreach (var item in m_Wrapper.m_ActionsCompanionActionsCallbackInterfaces)
-                UnregisterCallbacks(item);
-            m_Wrapper.m_ActionsCompanionActionsCallbackInterfaces.Clear();
-            AddCallbacks(instance);
-        }
-    }
-    public ActionsCompanionActions @ActionsCompanion => new ActionsCompanionActions(this);
 
     // Gameplay
     private readonly InputActionMap m_Gameplay;
@@ -797,10 +687,6 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
     {
         void OnHorizontalMovement(InputAction.CallbackContext context);
         void OnJump(InputAction.CallbackContext context);
-    }
-    public interface IActionsCompanionActions
-    {
-        void OnGlow(InputAction.CallbackContext context);
     }
     public interface IGameplayActions
     {

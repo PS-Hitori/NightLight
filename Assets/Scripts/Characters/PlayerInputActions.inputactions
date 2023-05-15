@@ -149,67 +149,6 @@
             ]
         },
         {
-            "name": "Actions (Companion)",
-            "id": "ae33a87c-5d3c-4bbb-921b-5504783b2474",
-            "actions": [
-                {
-                    "name": "Glow",
-                    "type": "Button",
-                    "id": "74b47968-f2b6-4804-9704-b6a1649eec87",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                }
-            ],
-            "bindings": [
-                {
-                    "name": "",
-                    "id": "e268e7fd-675e-41c0-bd2d-55a615335b6d",
-                    "path": "<Keyboard>/x",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "PC",
-                    "action": "Glow",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "One Modifier",
-                    "id": "2f8bb495-0cee-434f-bcaa-5a6916221e9a",
-                    "path": "OneModifier",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Glow",
-                    "isComposite": true,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "modifier",
-                    "id": "1286008e-8e1c-46e4-9dd0-913e52a6045a",
-                    "path": "<Gamepad>/leftTrigger",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Console",
-                    "action": "Glow",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "binding",
-                    "id": "b3a76665-6313-413a-bf2e-5146db338426",
-                    "path": "<Gamepad>/rightTrigger",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Console",
-                    "action": "Glow",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                }
-            ]
-        },
-        {
             "name": "Gameplay",
             "id": "5a5932e0-9865-4054-997e-6fa52d9c537f",
             "actions": [
