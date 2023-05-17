@@ -593,7 +593,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &7730804699159021032
 Transform:
   m_ObjectHideFlags: 0
@@ -1109,7 +1109,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6892871743996552654}
   m_Layer: 0
-  m_Name: Player
+  m_Name: Lila with Aria
   m_TagString: Untagged
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0

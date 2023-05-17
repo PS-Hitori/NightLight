@@ -23,7 +23,7 @@ public class PlayerCollisionManager : MonoBehaviour
             Debug.Log("Key Item Collected");
             Destroy(other.gameObject);
         }
-        if (other.gameObject.CompareTag("Slime"))
+        if (other.gameObject.CompareTag("Enemy"))
         {
             playerLifeSystem.LoseLife();
         }
@@ -36,12 +36,17 @@ public class PlayerCollisionManager : MonoBehaviour
             // There is still no proper death animation
             Time.timeScale = 0f;
         }
+        if (other.gameObject.CompareTag("Dark Orb"))
+        {
+            playerLifeSystem.LoseLife();
+        }
         if (other.gameObject.CompareTag("Light Orb"))
         {
             Destroy(other.gameObject);
             Debug.Log("Light Orb Collected");
         }
-        if(other.gameObject.CompareTag("Key Item")){
+        if (other.gameObject.CompareTag("Key Item"))
+        {
             Debug.Log("Key Item Collected");
             Destroy(other.gameObject);
         }

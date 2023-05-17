@@ -13,7 +13,6 @@ TagManager:
   - SceneHandler
   - Warp
   - TransitionHandler
-  - Slime
   - Light Orb
   - Light
   - Checkpoint
@@ -38,6 +37,7 @@ TagManager:
   - Door
   - Game Over
   - Options/Game
+  - Enemy
   layers:
   - Default
   - TransparentFX

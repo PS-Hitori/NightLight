@@ -23,12 +23,12 @@ namespace LunarflyArts
 
         private void Update()
         {
-            if (isInRange && !isInteracting && player.GetComponent<PlayerInputManager>().GetInteractInput())
+            if (isInRange && !isInteracting && player.GetComponentInChildren<PlayerInputManager>().GetInteractInput())
             {
                 isInteracting = true;
                 WarpToScene(sceneName);
             }
-            else if (isInteracting && !player.GetComponent<PlayerInputManager>().GetInteractInput())
+            else if (isInteracting && !player.GetComponentInChildren<PlayerInputManager>().GetInteractInput())
             {
                 isInteracting = false;
             }

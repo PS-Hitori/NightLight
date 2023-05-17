@@ -1,5 +1,5 @@
 using UnityEngine;
-
+using System.Collections;
 namespace LunarflyArts
 {
     public class PlayerLifeSystem : MonoBehaviour
@@ -9,6 +9,7 @@ namespace LunarflyArts
         private bool canLoseLife = true;
         private float loseLifeCooldown = 1.0f;
         private GameObject gameOverScreen;
+        private GameObject UIControlScheme;
 
         private void Awake()
         {
@@ -16,9 +17,12 @@ namespace LunarflyArts
             playerHearts = new GameObject[playerMaxHeart];
             playerHearts = GameObject.FindGameObjectsWithTag("Hearts");
             gameOverScreen = GameObject.Find("Game Over");
+            UIControlScheme = GameObject.FindGameObjectWithTag("UI");
         }
 
-        private void Start(){
+        private void Start()
+        {
+            if (gameOverScreen == null) return;
             gameOverScreen.SetActive(false);
         }
         public void LoseLife()
@@ -37,15 +41,17 @@ namespace LunarflyArts
             if (playerHearts[0].activeSelf == false)
             {
                 gameOverScreen.SetActive(true);
+                UIControlScheme.SetActive(false);
                 Time.timeScale = 0f;
             }
 
             canLoseLife = false;
-            Invoke("ResetLoseLifeCooldown", loseLifeCooldown);
+            StartCoroutine(ResetLoseLifeCooldown());
         }
 
-        private void ResetLoseLifeCooldown()
+        private IEnumerator ResetLoseLifeCooldown()
         {
+            yield return new WaitForSeconds(loseLifeCooldown);
             canLoseLife = true;
         }
 
