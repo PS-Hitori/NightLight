@@ -7,23 +7,15 @@ namespace LunarflyArts
         private GameObject[] playerHearts;
         private int playerMaxHeart = 3;
         private bool canLoseLife = true;
+        private bool isPlayerDead = false;
         private float loseLifeCooldown = 1.0f;
-        private GameObject gameOverScreen;
-        private GameObject UIControlScheme;
+
 
         private void Awake()
         {
             Canvas uiCanvas = FindObjectOfType<Canvas>();
             playerHearts = new GameObject[playerMaxHeart];
             playerHearts = GameObject.FindGameObjectsWithTag("Hearts");
-            gameOverScreen = GameObject.Find("Game Over");
-            UIControlScheme = GameObject.FindGameObjectWithTag("UI");
-        }
-
-        private void Start()
-        {
-            if (gameOverScreen == null) return;
-            gameOverScreen.SetActive(false);
         }
         public void LoseLife()
         {
@@ -40,13 +32,28 @@ namespace LunarflyArts
 
             if (playerHearts[0].activeSelf == false)
             {
-                gameOverScreen.SetActive(true);
-                UIControlScheme.SetActive(false);
+                isPlayerDead = true;
                 Time.timeScale = 0f;
             }
 
             canLoseLife = false;
             StartCoroutine(ResetLoseLifeCooldown());
+        }
+
+        public void KillPlayer(){
+            isPlayerDead = true;
+            Time.timeScale = 0f;
+        }
+        public void GainLife()
+        {
+            for (int i = 0; i < playerMaxHeart; i++)
+            {
+                if (playerHearts[i].activeSelf == false)
+                {
+                    playerHearts[i].SetActive(true);
+                    break;
+                }
+            }
         }
 
         private IEnumerator ResetLoseLifeCooldown()
@@ -55,5 +62,9 @@ namespace LunarflyArts
             canLoseLife = true;
         }
 
+        public bool IsPlayerDead()
+        {
+            return isPlayerDead;
+        }
     }
 }

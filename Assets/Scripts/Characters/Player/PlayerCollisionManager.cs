@@ -14,10 +14,6 @@ public class PlayerCollisionManager : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.CompareTag("Ground"))
-        {
-            playerActionsManager.SetIsJumping(false);
-        }
         if (other.gameObject.CompareTag("Key Item"))
         {
             Debug.Log("Key Item Collected");
@@ -32,18 +28,13 @@ public class PlayerCollisionManager : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Kill Plane"))
         {
-            // Freeze the time
-            // There is still no proper death animation
-            Time.timeScale = 0f;
+            playerLifeSystem.KillPlayer();
         }
-        if (other.gameObject.CompareTag("Dark Orb"))
-        {
-            playerLifeSystem.LoseLife();
-        }
-        if (other.gameObject.CompareTag("Light Orb"))
+        if (other.gameObject.CompareTag("Hearts"))
         {
             Destroy(other.gameObject);
-            Debug.Log("Light Orb Collected");
+            Debug.Log("Heart collected");
+            playerLifeSystem.GainLife();
         }
         if (other.gameObject.CompareTag("Key Item"))
         {

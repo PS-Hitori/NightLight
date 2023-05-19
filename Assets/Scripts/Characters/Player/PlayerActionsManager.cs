@@ -5,7 +5,7 @@ namespace LunarflyArts
     public class PlayerActionsManager : MonoBehaviour
     {
         private float movementSpeed = 3.5f;
-        private float jumpForce = 5.5f;
+        private float jumpForce = 6.5f;
 
         new Rigidbody2D rigidbody2D;
         private PlayerInputManager inputManager;

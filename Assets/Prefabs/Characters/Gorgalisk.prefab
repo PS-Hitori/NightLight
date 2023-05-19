@@ -97,7 +97,6 @@ GameObject:
   - component: {fileID: 229481822944738124}
   - component: {fileID: 229481822944738125}
   - component: {fileID: 7781682241104187027}
-  - component: {fileID: 4459830603308573277}
   m_Layer: 6
   m_Name: Gorgalisk
   m_TagString: Boss
@@ -168,28 +167,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 10, y: 10}
   m_EdgeRadius: 0
---- !u!114 &4459830603308573277
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 229481822944738123}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 92cba84477d44e648ab74a20a3b9792e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tentacles:
-  - {fileID: 229481824558467312}
-  - {fileID: 229481824700923610}
-  - {fileID: 229481823616994355}
-  - {fileID: 229481823095508448}
-  orbPrefab: {fileID: 0}
-  orbSpeed: 5
-  orbSizeIncrease: 0.2
-  orbLifetime: 5
-  attackInterval: 3
 --- !u!1 &229481823095508447
 GameObject:
   m_ObjectHideFlags: 0

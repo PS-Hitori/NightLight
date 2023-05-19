@@ -13,26 +13,39 @@ namespace LunarflyArts
         {
             player = GameObject.FindGameObjectWithTag("Player").transform;
             offset = transform.position - player.position;
-            offset.y = transform.position.y - player.position.y; 
+            offset.y = transform.position.y - player.position.y;
         }
 
         private void Update()
         {
             Vector3 targetPosition = player.position + offset;
-
             transform.position = Vector3.Lerp(transform.position, targetPosition, followSpeed * Time.deltaTime);
-      
+
             Vector3 playerVelocity = player.GetComponent<Rigidbody2D>().velocity;
             float playerFacingDirection = Mathf.Sign(player.localScale.x);
-       
+
             if (playerVelocity.x < 0 && transform.position.x > player.position.x && playerFacingDirection > 0)
             {
-                transform.localRotation = Quaternion.Euler(0f, 180f, 0f);
-            }       
+                transform.localScale = new Vector3(-0.15f, 0.15f, 1f); 
+            }
             else if (playerVelocity.x > 0 && transform.position.x < player.position.x && playerFacingDirection < 0)
             {
-                transform.localRotation = Quaternion.Euler(0f, 0f, 0f);
+                transform.localScale = new Vector3(0.15f, 0.15f, 1f); 
+            }
+            else if (playerVelocity.x == 0 && playerFacingDirection < 0)
+            {
+                transform.localScale = new Vector3(-0.15f, 0.15f, 1f); 
+            }
+            else if (playerVelocity.x == 0 && playerFacingDirection > 0)
+            {
+                transform.localScale = new Vector3(0.15f, 0.15f, 1f); 
+            } 
+            if (playerVelocity.x != 0)
+            {
+                transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x) * Mathf.Sign(playerVelocity.x), transform.localScale.y, transform.localScale.z);
             }
         }
+
+
     }
 }

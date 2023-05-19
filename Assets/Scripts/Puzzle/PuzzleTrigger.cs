@@ -4,25 +4,22 @@ namespace LunarflyArts
 {
     public class PuzzleTrigger : MonoBehaviour
     {
-        public string puzzleTag;
-        public GameObject objectToActivate;
+        public GameObject puzzleObject;
 
-        private bool isActivated = false;
+        public GameObject puzzleTrigger;
 
-        private void OnTriggerEnter(Collider other)
+        private void Awake()
         {
-            if (!isActivated)
-            {
-                isActivated = true;
-                ActivateObject();
-            }
+            puzzleObject.SetActive(false);
         }
 
-        private void ActivateObject()
+        private void OnTriggerEnter2D(Collider2D other)
         {
-            objectToActivate.SetActive(true);
-
-            Debug.Log("Puzzle Triggered: " + puzzleTag);
+            if (other.gameObject.CompareTag("Player"))
+            {
+                puzzleObject.SetActive(true);
+                puzzleTrigger.SetActive(false);
+            }
         }
     }
 }

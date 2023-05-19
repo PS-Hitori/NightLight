@@ -100,6 +100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 237ac005913e30042b34d99d36090c73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  heartPiece: {fileID: 402159868349471023, guid: 6f54f1cb322ed7b4ba017f483a4012a9, type: 3}
   movementSpeed: 1
 --- !u!61 &8352705519687756173
 BoxCollider2D:

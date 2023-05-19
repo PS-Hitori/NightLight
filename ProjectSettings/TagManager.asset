@@ -7,8 +7,6 @@ TagManager:
   - Ground
   - Switches
   - Playstation
-  - Xbox
-  - PC
   - Kill Plane
   - SceneHandler
   - Warp
@@ -27,17 +25,16 @@ TagManager:
   - Options/Audio
   - Options/Controls
   - Transition
-  - UI
-  - Glow
   - Interact
-  - Backdrop
-  - DialogueTrigger
-  - DialogueSystem
   - GameManager
-  - Door
   - Game Over
   - Options/Game
   - Enemy
+  - UI/On Screen
+  - UI/Pause
+  - Backdrop
+  - UI
+  - CutsceneTrigger
   layers:
   - Default
   - TransparentFX

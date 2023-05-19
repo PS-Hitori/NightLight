@@ -1,20 +1,12 @@
 using UnityEngine;
 
 namespace LunarflyArts
-{
-    public class WarpHandler : MonoBehaviour
+{    public class WarpHandler : MonoBehaviour
     {
         [SerializeField] private string sceneName;
-        private GameObject interactButton;
-
-        private void Start()
+        private void OnTriggerEnter2D(Collider2D collision)
         {
-            interactButton = GameObject.FindGameObjectWithTag("Interact");
-        }
-        private void OnTriggerEnter2D(Collider2D other)
-        {
-            interactButton.SetActive(false);
-            if (other.gameObject.CompareTag("Player"))
+            if (collision.CompareTag("Player"))
             {
                 WarpToScene(sceneName);
             }

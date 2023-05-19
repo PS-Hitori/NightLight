@@ -3,6 +3,8 @@ namespace LunarflyArts
 {
     public class LeverState : MonoBehaviour
     {
+        public GameObject targetObject;
+        public bool showObjectOnActivation;
         private Animator animator;
         private PlayerInputManager inputManager;
         private bool isActivated;
@@ -18,6 +20,14 @@ namespace LunarflyArts
             animator.SetTrigger("isActivated");
             isActivated = true;
             Debug.Log("Lever Activated: " + isActivated);
+            showObjectOnActivation = true;
+
+            if (targetObject != null)
+            {
+                if(showObjectOnActivation){
+                    Destroy(targetObject);
+                }
+            }
         }
 
         private void OnCollisionEnter2D(Collision2D other)

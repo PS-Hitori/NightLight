@@ -47,5 +47,19 @@ public class DiscordController : MonoBehaviour
     private void Update()
     {
         discord.RunCallbacks();
+        var activityManager = discord.GetActivityManager();
+        UnityEditor.EditorApplication.playModeStateChanged += (UnityEditor.PlayModeStateChange state) =>
+        {
+            if (state == UnityEditor.PlayModeStateChange.ExitingPlayMode || state == UnityEditor.PlayModeStateChange.ExitingEditMode)
+            {
+                activityManager.ClearActivity((res) =>
+                {
+                    if (res == Discord.Result.Ok)
+                        Debug.Log("Discord Rich Presence Cleared!");
+                    else
+                        Debug.LogError("Discord Rich Presence Failed to Clear!");
+                });
+            }
+        };
     }
 }

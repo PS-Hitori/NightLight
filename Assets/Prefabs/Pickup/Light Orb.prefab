@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3518010063364178114}
   m_Layer: 0
   m_Name: Light Orb
-  m_TagString: Light Orb
+  m_TagString: Key Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
