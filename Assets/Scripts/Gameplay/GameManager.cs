@@ -1,6 +1,6 @@
 // This GameManager handles all the game logic and is the main controller for the game.
 using UnityEngine;
-
+using TMPro;
 namespace LunarflyArts
 {
     public class GameManager : MonoBehaviour
@@ -11,9 +11,9 @@ namespace LunarflyArts
         private SceneHandler sceneHandler;
         private bool isPaused = false;
         private GameObject lampCheckpoint;
-
+        private AudioSource audioSource;
         private GameObject player;
-
+        public TextMeshProUGUI lightOrbCounter;
         private void Awake()
         {
             GameOverCanvas = GameObject.Find("Game Over");
@@ -27,7 +27,6 @@ namespace LunarflyArts
         private void Start()
         {
             GameOverCanvas.SetActive(false);
-
             OnScreenUI.SetActive(true);
             PauseUI.SetActive(false);
         }
@@ -39,7 +38,7 @@ namespace LunarflyArts
                 GameOverCanvas.SetActive(true);
                 PauseUI.SetActive(false);
                 OnScreenUI.SetActive(false);
-                Time.timeScale = 1f;
+                Time.timeScale = 0f;
             }   
             PauseScreen();
         }
@@ -60,12 +59,6 @@ namespace LunarflyArts
                 PauseUI.SetActive(false);
                 Time.timeScale = 1f; // Unpause the game by setting time scale to 1
             }
-        }
-
-        public void ReloadToCheckpoint(){
-            lampCheckpoint.GetComponent<CheckpointSystem>().ResetPlayerToLastCheckpoint(player);
-            Time.timeScale = 1f;
-            Debug.Log("Resetting to checkpoint");
         }
     }
 }

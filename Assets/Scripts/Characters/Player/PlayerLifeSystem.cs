@@ -56,6 +56,14 @@ namespace LunarflyArts
             }
         }
 
+        public void ResetLife(){
+            for (int i = 0; i < playerMaxHeart; i++)
+            {
+                playerHearts[i].SetActive(true);
+            }
+            isPlayerDead = false;
+        }
+
         private IEnumerator ResetLoseLifeCooldown()
         {
             yield return new WaitForSeconds(loseLifeCooldown);

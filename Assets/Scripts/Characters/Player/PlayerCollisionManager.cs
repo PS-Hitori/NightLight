@@ -6,6 +6,7 @@ public class PlayerCollisionManager : MonoBehaviour
     private PlayerAnimatorHandler playerAnimatorHandler;
     private PlayerActionsManager playerActionsManager;
     private PlayerLifeSystem playerLifeSystem;
+    private int lightOrbCounter = 0;
     private void Awake()
     {
         playerActionsManager = GetComponent<PlayerActionsManager>();
@@ -41,5 +42,18 @@ public class PlayerCollisionManager : MonoBehaviour
             Debug.Log("Key Item Collected");
             Destroy(other.gameObject);
         }
+        if (other.gameObject.CompareTag("Light Orb"))
+        {
+            Debug.Log("Light Orb Collected");
+            Destroy(other.gameObject);
+            lightOrbCounter++;
+            Debug.Log("Light Orb Counter: " + lightOrbCounter);
+        }
+    }
+
+    public int LightOrbCounter
+    {
+        get { return lightOrbCounter; }
+        set { lightOrbCounter = value; }
     }
 }
