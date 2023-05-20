@@ -25,7 +25,7 @@ namespace LunarflyArts
 
         }
 
-        public bool GetLampLitState()
+        public bool GetLampLitState(bool lampState)
         {
             return isLampLit;
         }

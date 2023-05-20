@@ -5,41 +5,43 @@ namespace LunarflyArts
 {
     public class GameOverManager : MonoBehaviour
     {
-        private GameObject gameManager;
-        private GameObject checkPoint;
-        private GameObject gameOverCanvas;
-        private GameObject OnScreenUI;
+        private GameObject checkpointSystem;
         private GameObject player;
+
         private void Awake()
         {
-            gameManager = GameObject.FindGameObjectWithTag("GameManager");
-            checkPoint = GameObject.FindGameObjectWithTag("Checkpoint");
-            gameOverCanvas = GameObject.FindGameObjectWithTag("Game Over");
-            OnScreenUI = GameObject.FindGameObjectWithTag("UI/On Screen");
+            checkpointSystem = GameObject.FindGameObjectWithTag("Checkpoint");
             player = GameObject.FindGameObjectWithTag("Player");
+        }
+
+        private void Update()
+        {
+            if (player.GetComponent<PlayerInputManager>().GetRestartInput())
+            {
+                ResetToCheckpoint();
+            }
+            if (player.GetComponent<PlayerInputManager>().GetCancel())
+            {
+                GoToMainMenu();
+            }
         }
 
         public void ResetToCheckpoint()
         {
-            Debug.Log("Resetting scene");
-            Time.timeScale = 1f;
-            CheckpointSystem checkpointSystem = checkPoint.GetComponent<CheckpointSystem>();
-            if (checkpointSystem != null)
+            if (checkpointSystem.GetComponent<CheckpointSystem>().GetCheckpoint() == Vector3.zero)
             {
-                Transform lastCheckpoint = checkpointSystem.LastCheckpoint;
-                if (lastCheckpoint != null)
-                {
-                    GameObject player = GameObject.FindGameObjectWithTag("Player");
-                    if (player != null)
-                    {
-                        Vector3 spawnOffset = new Vector3(2f, 0f, 0f);
-                        player.transform.position = lastCheckpoint.position + spawnOffset;
-                        gameOverCanvas.SetActive(false);
-                        player.GetComponent<PlayerLifeSystem>().ResetLife();
-                        OnScreenUI.SetActive(true);
-                        Time.timeScale = 1f;
-                    }
-                }
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            }
+            else
+            {
+                Debug.Log("Resetting to checkpoint");
+
+                GameManager gameManager = FindObjectOfType<GameManager>();
+
+                gameManager.RestoreUIAfterRestart();
+                player.GetComponent<PlayerLifeSystem>().ResetLife();
+                checkpointSystem.GetComponent<CheckpointSystem>().ResetPlayerToLastCheckpoint();
+                Time.timeScale = 1f;
             }
         }
 

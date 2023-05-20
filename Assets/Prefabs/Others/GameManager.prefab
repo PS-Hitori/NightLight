@@ -10,9 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 6197861188177713796}
   - component: {fileID: 6197861188177713799}
+  - component: {fileID: 1734614921}
   m_Layer: 0
   m_Name: GameManager
-  m_TagString: Untagged
+  m_TagString: GameManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -44,4 +45,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85f31a68ed38b464ea27f93455f62ff5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UICanvas: {fileID: 0}
+  OnScreenUI: {fileID: 0}
+  PauseUI: {fileID: 0}
+  GameOverCanvas: {fileID: 0}
+--- !u!114 &1734614921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6197861188177713798}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50cc9109840c7134782649bfe66228e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

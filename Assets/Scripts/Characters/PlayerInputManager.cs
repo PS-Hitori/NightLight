@@ -28,6 +28,10 @@ namespace LunarflyArts
             return inputActions.Gameplay.Pause.triggered;
         }
 
+        public bool GetRestartInput(){
+            return inputActions.Gameplay.Restart.triggered;
+        }
+
         public bool GetInteractInput()
         {
             return inputActions.Gameplay.Interact.triggered;

@@ -4,35 +4,35 @@ namespace LunarflyArts
 {
     public class CheckpointSystem : MonoBehaviour
     {
-        private Transform lastCheckpoint;
+        private Vector3 lastCheckpoint;
         private LampState lampState;
         private AudioSource audioSource;
+        private GameObject player;
 
         private void Start()
         {
-            lampState = gameObject.GetComponentInChildren<LampState>();
-            audioSource = gameObject.GetComponent<AudioSource>();
+            lampState = GetComponentInChildren<LampState>();
+            audioSource = GetComponent<AudioSource>();
+            player = GameObject.FindGameObjectWithTag("Player");
         }
 
         private void OnTriggerEnter2D(Collider2D other)
         {
             if (other.CompareTag("Player"))
             {
-                lastCheckpoint = this.transform;
-                lampState.GetLampLitState();
-                Debug.Log("Checkpoint: " + this.transform.position);
+                lastCheckpoint = transform.position;
+                lampState.LampLitState();
                 audioSource.Play();
             }
         }
 
-        public void ResetPlayerToLastCheckpoint(GameObject player)
+        public void ResetPlayerToLastCheckpoint()
         {
-            player.transform.position = lastCheckpoint.position;
+            player.transform.position = lastCheckpoint;
         }
 
-        public Transform LastCheckpoint
-        {
-            get { return lastCheckpoint; }
+        public Vector3 GetCheckpoint(){
+            return lastCheckpoint;
         }
     }
 }

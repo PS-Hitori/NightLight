@@ -169,13 +169,22 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "Restart",
+                    "type": "Button",
+                    "id": "fb4cc281-0a7c-4eca-b332-896e02235980",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
                 {
                     "name": "",
                     "id": "6c705281-e540-41a9-a8e2-7e354d49d62e",
-                    "path": "<Keyboard>/escape",
+                    "path": "<Keyboard>/p",
                     "interactions": "",
                     "processors": "",
                     "groups": "PC",
@@ -213,6 +222,17 @@
                     "processors": "",
                     "groups": "Console",
                     "action": "Interact",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "24657d51-fa36-48c2-a4ce-6d32601b49e3",
+                    "path": "<Keyboard>/r",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "PC",
+                    "action": "Restart",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

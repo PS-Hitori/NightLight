@@ -7,16 +7,30 @@ namespace LunarflyArts
     {
         [SerializeField] private GameObject OnScreenUI;
         [SerializeField] private GameObject PauseUI;
+        [SerializeField] private GameObject mainUI;
         [SerializeField] private GameObject GameOverCanvas;
         private SceneHandler sceneHandler;
         private bool isPaused = false;
         private GameObject lampCheckpoint;
-        private AudioSource audioSource;
         private GameObject player;
-        public TextMeshProUGUI lightOrbCounter;
+
+        private GameManager instance;
+
+        public GameManager Instance
+        {
+            get
+            {
+                if (instance == null)
+                {
+                    instance = this;
+                }
+                return instance;
+            }
+        }
         private void Awake()
         {
-            GameOverCanvas = GameObject.Find("Game Over");
+            GameOverCanvas = GameObject.FindGameObjectWithTag("Game Over");
+            mainUI = GameObject.FindGameObjectWithTag("UI/On Screen");
             OnScreenUI = GameObject.FindGameObjectWithTag("UI/On Screen");
             PauseUI = GameObject.FindGameObjectWithTag("UI/Pause");
             player = GameObject.FindGameObjectWithTag("Player");
@@ -29,17 +43,15 @@ namespace LunarflyArts
             GameOverCanvas.SetActive(false);
             OnScreenUI.SetActive(true);
             PauseUI.SetActive(false);
+            mainUI.SetActive(true);
         }
 
         private void Update()
         {
-            if (player.GetComponent<PlayerLifeSystem>().IsPlayerDead())
+            if (player.GetComponent<PlayerLifeSystem>().IsPlayerDead() == true)
             {
-                GameOverCanvas.SetActive(true);
-                PauseUI.SetActive(false);
-                OnScreenUI.SetActive(false);
-                Time.timeScale = 0f;
-            }   
+                ShowGameOverUI();
+            }
             PauseScreen();
         }
 
@@ -59,6 +71,22 @@ namespace LunarflyArts
                 PauseUI.SetActive(false);
                 Time.timeScale = 1f; // Unpause the game by setting time scale to 1
             }
+        }
+
+        public void RestoreUIAfterRestart()
+        {
+            OnScreenUI.SetActive(true);
+            PauseUI.SetActive(false);
+            mainUI.SetActive(true);
+            GameOverCanvas.SetActive(false);
+        }
+
+        public void ShowGameOverUI()
+        {
+            GameOverCanvas.SetActive(true);
+            PauseUI.SetActive(false);
+            OnScreenUI.SetActive(false);
+            mainUI.SetActive(false);
         }
     }
 }

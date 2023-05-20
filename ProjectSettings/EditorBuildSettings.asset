@@ -5,9 +5,6 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Scenes/NL_GameplayTrailer.unity
-    guid: b6173051cf6cf854fb8febd5aeb974c6
   - enabled: 1
     path: Assets/Scenes/NL_Menu.unity
     guid: 6edd1d7824b7bf242a99c3ef42d668b5
@@ -30,7 +27,13 @@ EditorBuildSettings:
     path: Assets/Scenes/Stages/Lumina Ruins/NL_LuminaRuins.unity
     guid: 97a71ca2c03289b46a7fc474221afc44
   - enabled: 1
-    path: Assets/Scenes/Cutscenes/NL_CTSCN_LuminaSpireMainRoom.unity
-    guid: 6e61b7485d8b78e4192bb11ea9903b41
+    path: Assets/Scenes/Stages/Lumina Spire/NL_INT_LuminaSpire.unity
+    guid: cabd117010e4e974f874c02fc3e185ee
+  - enabled: 1
+    path: Assets/Scenes/Cutscenes/NL_CTSCN_Ending.unity
+    guid: 8285a7fc79122e34ca092338f708c075
+  - enabled: 1
+    path: Assets/Scenes/Cutscenes/NL_CTSCN_Credits.unity
+    guid: ee481697fa876964b98216324e8cd20c
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 7933f369239c0564ca24ef38eb20afb7, type: 2}
