@@ -89,14 +89,7 @@ namespace LunarflyArts
 
         public void QuitGame()
         {
-            if (UnityEngine.Application.isEditor)
-            {
-                UnityEditor.EditorApplication.isPlaying = false;
-            }
-            else
-            {
-                UnityEngine.Application.Quit();
-            }
+            UnityEngine.Application.Quit();
         }
         private void OnEnable()
         {
